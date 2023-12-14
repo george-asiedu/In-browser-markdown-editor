@@ -82,6 +82,57 @@ const GlobalStyle = createGlobalStyle`
       font-size: 6px;
     }
   }
+
+  blockquote {
+    display: flex;
+    align-items: center;
+    margin: 0px;
+    padding: 24px 24px 24px 20px;
+    width: 90%;
+    border-radius: 4px;
+    border-left: 4px solid #E46643;
+    background-color: ;
+  }
+  blockquote p {
+    font-family: 'Roboto Slab';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 24px;
+    color: ;
+  }
+  blockquote p a {
+    font-family: 'Roboto Slab';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 24px;
+    color: ;
+  }
+  p code {
+    font-family: 'Roboto Mono';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: ;
+  }
+  pre {
+    margin: 0px;
+    padding: 24px 24px 24px 20px;
+    width: 90%;
+    border-radius: 4px;
+    background-color: ;
+  }
+  pre code {
+    white-space: pre-wrap;
+    font-family: 'Roboto Mono';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: ;
+  }
 `
 
 function App() {
