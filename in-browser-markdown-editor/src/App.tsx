@@ -56,6 +56,32 @@ const GlobalStyle = createGlobalStyle`
     font-size: 14px;
     color: 
   }
+
+  p {
+    font-family: 'Roboto Slab', serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: 
+  }
+
+  ol li {
+    font-family: 'Roboto Slab', serif;
+    font-weight: 400;
+    font-size: 14px;
+    padding-left: 9px;
+  }
+
+  ul li {
+    font-family: 'Roboto Slab', serif;
+    font-weight: 400;
+    font-size: 14px;
+    padding-left: 9px;
+
+    &::marker {
+      color: #E46643;
+      font-size: 6px;
+    }
+  }
 `
 
 function App() {
