@@ -1,4 +1,6 @@
-export interface Theme {
+import { DefaultTheme } from "styled-components";
+
+export interface Theme extends DefaultTheme {
   name: string;
   background: {
     main: string;

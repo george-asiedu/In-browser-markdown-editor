@@ -1,7 +1,8 @@
 import React from 'react';
-import styled, { createGlobalStyle } from 'styled-components'
+import styled, { createGlobalStyle, DefaultTheme } from 'styled-components'
+import { Theme, themes } from './themes/Themes';
 
-const GlobalStyle = createGlobalStyle`
+const GlobalStyle = createGlobalStyle<{ theme: DefaultTheme & Theme }>`
   * {
     margin: 0px;
     padding: 0px;
@@ -13,55 +14,56 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Roboto Mono', monospace;
     font-family: 'Roboto', sans-serif;
     overflow-x: hidden;
+    background-color: ${({ theme }) => theme.background.main};
   }
 
   h1 {
     font-family: 'Roboto Slab', serif;
     font-weight: 700;
     font-size: 32px;
-    color: 
+    color: ${({ theme }) => theme.color.htmlheaders};
   }
 
   h2 {
     font-family: 'Roboto Slab', serif;
     font-weight: 300;
     font-size: 28px;
-    color: 
+    color: ${({ theme }) => theme.color.htmlheaders};
   }
 
   h3 {
     font-family: 'Roboto Slab', serif;
     font-weight: 700;
     font-size: 24px;
-    color: 
+    color: ${({ theme }) => theme.color.htmlheaders};
   }
 
   h4 {
     font-family: 'Roboto Slab', serif;
     font-weight: 700;
     font-size: 20px;
-    color: 
+    color: ${({ theme }) => theme.color.htmlheaders};
   }
 
   h5 {
     font-family: 'Roboto Slab', serif;
     font-weight: 700;
     font-size: 16px;
-    color: 
+    color: ${({ theme }) => theme.color.htmlheaders};
   }
 
   h6 {
     font-family: 'Roboto Slab', serif;
     font-weight: 700;
     font-size: 14px;
-    color: 
+    color: ${({ theme }) => theme.color.h6};
   }
 
   p {
     font-family: 'Roboto Slab', serif;
     font-weight: 400;
     font-size: 14px;
-    color: 
+    color: ${({ theme }) => theme.color.previewbody};
   }
 
   ol li {
@@ -91,7 +93,7 @@ const GlobalStyle = createGlobalStyle`
     width: 90%;
     border-radius: 4px;
     border-left: 4px solid #E46643;
-    background-color: ;
+    background-color: ${({ theme }) => theme.background.blockquote};;
   }
   blockquote p {
     font-family: 'Roboto Slab';
@@ -99,7 +101,7 @@ const GlobalStyle = createGlobalStyle`
     font-weight: 700;
     font-size: 14px;
     line-height: 24px;
-    color: ;
+    color: ${({ theme }) => theme.color.blockquote};;
   }
   blockquote p a {
     font-family: 'Roboto Slab';
@@ -107,7 +109,7 @@ const GlobalStyle = createGlobalStyle`
     font-weight: 700;
     font-size: 14px;
     line-height: 24px;
-    color: ;
+    color: ${({ theme }) => theme.color.blockquote};;
   }
   p code {
     font-family: 'Roboto Mono';
@@ -115,14 +117,14 @@ const GlobalStyle = createGlobalStyle`
     font-weight: 400;
     font-size: 14px;
     line-height: 24px;
-    color: ;
+    color: ${({ theme }) => theme.color.code};;
   }
   pre {
     margin: 0px;
     padding: 24px 24px 24px 20px;
     width: 90%;
     border-radius: 4px;
-    background-color: ;
+    background-color: ${({ theme }) => theme.background.blockquote};;
   }
   pre code {
     white-space: pre-wrap;
@@ -131,7 +133,7 @@ const GlobalStyle = createGlobalStyle`
     font-weight: 400;
     font-size: 14px;
     line-height: 24px;
-    color: ;
+    color: ${({ theme }) => theme.color.code};;
   }
 `;
 
@@ -141,7 +143,7 @@ const App: React.FC = () => {
 
   return (
     <>
-    <GlobalStyle />
+    <GlobalStyle theme={themes.light}/>
     <StyledApp>
 
     </StyledApp>
