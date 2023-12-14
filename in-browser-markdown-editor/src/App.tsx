@@ -1,4 +1,4 @@
-import './App.css'
+import React from 'react';
 import styled, { createGlobalStyle } from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
@@ -133,13 +133,18 @@ const GlobalStyle = createGlobalStyle`
     line-height: 24px;
     color: ;
   }
-`
+`;
 
-function App() {
+const StyledApp = styled.div``;
+
+const App: React.FC = () => {
 
   return (
     <>
     <GlobalStyle />
+    <StyledApp>
+
+    </StyledApp>
     </>
   )
 }
