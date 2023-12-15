@@ -52,9 +52,18 @@ const DocumentContextWrapper: React.FC = () => {
     }, [])
 
     useEffect(() => {
+        const storedActiveDocument = JSON.parse(localStorage.getItem("activeDocument") || "");
+        if (storedActiveDocument) {
+          setActiveDocument(storedActiveDocument);
+        }
+      }, []);
+
+    useEffect(() => {
         localStorage.setItem('documents', JSON.stringify(documents))
         localStorage.setItem('activeDocument', JSON.stringify(activeDocument))
     }, [documents, activeDocument])
+
+
 
   return (
     <DocumentContext.Provider>
