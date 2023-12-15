@@ -20,6 +20,10 @@ interface DocumentContextProps {
     changeActiveDocument: (id: string) => void;
 }
 
+interface DocumentContextWrapperProps {
+    children: React.ReactNode;
+  }
+
 export const DocumentContext = createContext<DocumentContextProps>({
     documents: JSON.parse(localStorage.getItem("documents") || "") || textDocuments,
     activeDocument: {} as Document,
@@ -28,11 +32,11 @@ export const DocumentContext = createContext<DocumentContextProps>({
     onDocumentContentChange: () => {},
     onDocumentNameChange: () => {},
     saveDocument: () => {},
-    changeActiveDocument: () => {}  
+    changeActiveDocument: () => {}
 })
 
 
-const DocumentContextWrapper: React.FC = () => {
+const DocumentContextWrapper: React.FC<DocumentContextWrapperProps> = ({ children }) => {
     const [documents, setDocuments] = useState<Document[]>(
         JSON.parse(localStorage.getItem('documents') || '') || textDocuments
     )
@@ -85,12 +89,19 @@ const DocumentContextWrapper: React.FC = () => {
         })
     }
 
-    const onDocumentNameChange = (event: ChangeEvent<HTMLTextAreaElement>): void => {
+    const onDocumentContentChange = (event: ChangeEvent<HTMLTextAreaElement>): void => {
         setActiveDocument({
-            ...activeDocument,
-            content: event.target.value
+          ...activeDocument,
+          content: event.target.value,
         })
     }
+
+    const onDocumentNameChange = (event: ChangeEvent<HTMLInputElement>): void => {
+        setActiveDocument({
+          ...activeDocument,
+          name: event.target.value,
+        });
+    };
 
     const saveDocument = (): void => {
         setDocuments((existingDocumnets) => {
@@ -126,8 +137,19 @@ const DocumentContextWrapper: React.FC = () => {
 
 
   return (
-    <DocumentContext.Provider>
-        
+    <DocumentContext.Provider
+        value={{
+            documents,
+            activeDocument,
+            createDocument,
+            deleteDocument,
+            onDocumentContentChange,
+            onDocumentNameChange,
+            saveDocument,
+            changeActiveDocument
+        }}
+    >
+        {children}
     </DocumentContext.Provider>
   )
 }
