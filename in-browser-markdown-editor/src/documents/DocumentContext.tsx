@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { createContext, ChangeEvent } from 'react'
 import textDocuments from './data.json'
 import { v4 as uuidv4 } from "uuid";
 
@@ -19,6 +19,17 @@ interface DocumentContextProps {
     saveDocument: () => void;
     changeActiveDocument: (id: string) => void;
 }
+
+export const DocumentContext = createContext<DocumentContextProps>({
+    documents: JSON.parse(localStorage.getItem("documents") || "") || textDocuments,
+    activeDocument: {} as Document,
+    createDocument: () => {},
+    deleteDocument: () => {},
+    onDocumentContentChange: () => {},
+    onDocumentNameChange: () => {},
+    saveDocument: () => {},
+    changeActiveDocument: () => {}  
+})
 
 const DocumentContext: React.FC = () => {
   return (
