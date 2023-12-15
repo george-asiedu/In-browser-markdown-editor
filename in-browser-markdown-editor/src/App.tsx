@@ -145,7 +145,7 @@ const App: React.FC = () => {
     <>
     <GlobalStyle theme={themes.light}/>
     <StyledApp>
-
+      
     </StyledApp>
     </>
   )
