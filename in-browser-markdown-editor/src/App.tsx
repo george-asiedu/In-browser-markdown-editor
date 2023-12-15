@@ -1,6 +1,7 @@
-import React from 'react';
-import styled, { createGlobalStyle, DefaultTheme } from 'styled-components'
+import React, { useContext } from 'react';
+import styled, { createGlobalStyle, DefaultTheme, ThemeProvider } from 'styled-components'
 import { Theme, themes } from './themes/Themes';
+import { ThemeContext, ThemeContextProvider } from './themes/ThemeContext';
 
 const GlobalStyle = createGlobalStyle<{ theme: DefaultTheme & Theme }>`
   * {
@@ -140,14 +141,15 @@ const GlobalStyle = createGlobalStyle<{ theme: DefaultTheme & Theme }>`
 const StyledApp = styled.div``;
 
 const App: React.FC = () => {
+  const { theme } = useContext(ThemeContext)
 
   return (
-    <>
-    <GlobalStyle theme={themes.light}/>
-    <StyledApp>
-      
-    </StyledApp>
-    </>
+    <ThemeContextProvider>
+      <ThemeProvider theme={theme}>
+        <GlobalStyle theme={themes.light}/>
+        <StyledApp></StyledApp>
+      </ThemeProvider>     
+    </ThemeContextProvider>
   )
 }
 
