@@ -29,6 +29,10 @@ const ThemeContextProvider: React.FC<ThemeContextProviderProps> = ({ children })
         localStorage.setItem('theme', JSON.stringify(theme))
     }, [theme])
 
+    const handleThemeChange = () => {
+        setTheme((prevTheme) => prevTheme.name === themes.light.name ? themes.dark : themes.light)
+    }
+
   return (
     <div>
         
