@@ -64,6 +64,13 @@ const DocumentContextWrapper: React.FC = () => {
     }, [documents, activeDocument])
 
 
+    const createDocument = (): void => {
+        const newID = uuidv4()
+        const newDateObject = new Date()
+        const newDateString = newDateObject.toLocaleString('default', { day: 'numeric'}) + ' ' 
+            + newDateObject.toLocaleString('default', { month: 'long' }) + ' ' 
+            + newDateObject.toLocaleString('default', { year: 'numeric'})
+    }
 
   return (
     <DocumentContext.Provider>
