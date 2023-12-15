@@ -37,6 +37,13 @@ const DocumentContextWrapper: React.FC = ({ children}) => {
         JSON.parse(localStorage.getItem('documents') || '') || textDocuments
     )
 
+    const [activeDocument, setActiveDocument] = useState<Document>(
+        JSON.parse(
+            localStorage.getItem('activeDocument') === 'undefined' ? '{}' 
+            : localStorage.getItem('activeDocument') || ''
+        ) || textDocuments[0]
+    )
+
   return (
     <DocumentContext.Provider>
         {children}
