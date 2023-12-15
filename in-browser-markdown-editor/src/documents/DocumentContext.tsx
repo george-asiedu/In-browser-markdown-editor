@@ -92,6 +92,18 @@ const DocumentContextWrapper: React.FC = () => {
         })
     }
 
+    const saveDocument = (): void => {
+        setDocuments((existingDocumnets) => {
+            return existingDocumnets.map((document) => {
+                if(document.id === activeDocument.id) {
+                    document.name = activeDocument.name
+                    document.content = activeDocument.content
+                }
+                return document
+            })
+        })
+    }
+
 
   return (
     <DocumentContext.Provider>
