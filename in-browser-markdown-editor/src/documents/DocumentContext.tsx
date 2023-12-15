@@ -108,12 +108,20 @@ const DocumentContextWrapper: React.FC = () => {
         const existingDocuments = documents.filter((document) => {
             return document.id !== activeDocument.id
         })
-        
+
         setDocuments(existingDocuments)
 
         existingDocuments.length === 0 
             ? setActiveDocument({} as Document) 
             : setActiveDocument(existingDocuments[0])
+    }
+
+    const changeActiveDocument = ( id: string ): void => {
+        setActiveDocument(
+            documents.find((document) => {
+                return document.id === id
+            }) || ({} as Document)
+        )
     }
 
 
