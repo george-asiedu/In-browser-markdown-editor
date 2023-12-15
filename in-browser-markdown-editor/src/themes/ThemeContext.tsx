@@ -1,6 +1,21 @@
-import React from 'react'
+import React, { createContext } from 'react'
+import { Theme, themes } from './Themes'
 
-const ThemeContext: React.FC = () => {
+interface ThemeContextProps {
+    theme: Theme;
+    handleThemeChange: () => void
+}
+
+interface ThemeContextProviderProps {
+    children: React.ReactNode
+}
+
+export const ThemeContext = createContext<ThemeContextProps>({
+    theme: themes.light,
+    handleThemeChange: () => {}
+})
+
+const ThemeContextProvider: React.FC = () => {
   return (
     <div>
         
@@ -8,4 +23,4 @@ const ThemeContext: React.FC = () => {
   )
 }
 
-export default ThemeContext
+export default ThemeContextProvider
