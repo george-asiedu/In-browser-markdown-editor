@@ -2,6 +2,10 @@ import React from 'react'
 import styled from 'styled-components'
 import iconDelete from '../../assets/icon-delete.svg'
 
+interface DeleteButtonProps {
+    setModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
 const DeletButtonStyle = styled.button`
     height: 20px;
     width: 18px;
