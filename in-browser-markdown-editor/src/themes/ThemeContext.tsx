@@ -34,9 +34,9 @@ const ThemeContextProvider: React.FC<ThemeContextProviderProps> = ({ children })
     }
 
   return (
-    <div>
-        
-    </div>
+    <ThemeContext.Provider value={{theme, handleThemeChange}}>
+        {children}
+    </ThemeContext.Provider>
   )
 }
 
