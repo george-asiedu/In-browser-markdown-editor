@@ -70,7 +70,15 @@ const DocumentContextWrapper: React.FC = () => {
         const newDateString = newDateObject.toLocaleString('default', { day: 'numeric'}) + ' ' 
             + newDateObject.toLocaleString('default', { month: 'long' }) + ' ' 
             + newDateObject.toLocaleString('default', { year: 'numeric'})
+
+        const newDocument: Document = {
+            id: newID,
+            name: 'untitled-document.md',
+            createdAt: newDateString,
+            content: '# Welcome to my markdown editor. Have fun!!!'
+        }
     }
+
 
   return (
     <DocumentContext.Provider>
