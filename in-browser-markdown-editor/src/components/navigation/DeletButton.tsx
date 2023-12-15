@@ -22,10 +22,13 @@ const DeleteIcon = styled.img<{ disabled: boolean }>`
     }
 `
 
-const DeletButton: React.FC = () => {
+const DeletButton: React.FC<DeleteButtonProps> = ({ setModalOpen }) => {
   return (
-    <DeletButtonStyle>
-
+    <DeletButtonStyle 
+        onClick={() => { setModalOpen(true)}} 
+        disabled={documents.length === 0 ? true : false}
+    >
+        <DeleteIcon src={iconDelete} disabled={documents.length === 0} />
     </DeletButtonStyle>
   )
 }
