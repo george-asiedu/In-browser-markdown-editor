@@ -1,4 +1,4 @@
-import React, { createContext, ChangeEvent, useState } from 'react'
+import React, { createContext, ChangeEvent, useState, useEffect } from 'react'
 import textDocuments from './data.json'
 import { v4 as uuidv4 } from "uuid";
 
@@ -33,7 +33,7 @@ export const DocumentContext = createContext<DocumentContextProps>({
 
 
 const DocumentContextWrapper: React.FC = ({ children}) => {
-    const [documents, setDOcuments] = useState<Document[]>(
+    const [documents, setDocuments] = useState<Document[]>(
         JSON.parse(localStorage.getItem('documents') || '') || textDocuments
     )
 
@@ -43,6 +43,13 @@ const DocumentContextWrapper: React.FC = ({ children}) => {
             : localStorage.getItem('activeDocument') || ''
         ) || textDocuments[0]
     )
+
+    useEffect(() => {
+        const storedDocuments = JSON.parse(localStorage.getItem('documents') || '')
+        if(storedDocuments) {
+            setDocuments(storedDocuments)
+        }
+    }, [])
 
   return (
     <DocumentContext.Provider>

@@ -22,7 +22,9 @@ export const ThemeContextProvider: React.FC<ThemeContextProviderProps> = ({ chil
 
     useEffect(() => {
         const currentTheme = JSON.parse(localStorage.getItem('theme')!)
-        if(currentTheme) setTheme(currentTheme)
+        if(currentTheme) {
+            setTheme(currentTheme)
+        }
     }, [])
 
     useEffect( () => {
