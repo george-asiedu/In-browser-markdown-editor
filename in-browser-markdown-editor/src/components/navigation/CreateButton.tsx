@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styled from 'styled-components'
+import { DocumentContext } from '../../documents/DocumentContext'
 
 const CreateButtonStyle = styled.div`
     display: flex;
@@ -27,11 +28,13 @@ const CreateButtonStyle = styled.div`
 
 
 const CreateButton: React.FC = () => {
-  return (
-    <CreateButtonStyle>
-        + New Document
-    </CreateButtonStyle>
-  )
+    const { createDocument } = useContext(DocumentContext)
+
+    return (
+        <CreateButtonStyle onClick={() => createDocument()}>
+            + New Document
+        </CreateButtonStyle>
+    )
 }
 
 export default CreateButton
