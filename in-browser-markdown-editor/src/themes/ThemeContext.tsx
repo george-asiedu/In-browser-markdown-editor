@@ -20,6 +20,11 @@ const ThemeContextProvider: React.FC<ThemeContextProviderProps> = ({ children })
         JSON.parse(localStorage.getItem('theme')!) || themes.light
     )
 
+    useEffect(() => {
+        const currentTheme = JSON.parse(localStorage.getItem('theme')!)
+        if(currentTheme) setTheme(currentTheme)
+    }, [])
+
     useEffect( () => {
         localStorage.setItem('theme', JSON.stringify(theme))
     }, [theme])
