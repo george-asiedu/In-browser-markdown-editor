@@ -104,6 +104,18 @@ const DocumentContextWrapper: React.FC = () => {
         })
     }
 
+    const deleteDocument = (): void => {
+        const existingDocuments = documents.filter((document) => {
+            return document.id !== activeDocument.id
+        })
+        
+        setDocuments(existingDocuments)
+
+        existingDocuments.length === 0 
+            ? setActiveDocument({} as Document) 
+            : setActiveDocument(existingDocuments[0])
+    }
+
 
   return (
     <DocumentContext.Provider>
