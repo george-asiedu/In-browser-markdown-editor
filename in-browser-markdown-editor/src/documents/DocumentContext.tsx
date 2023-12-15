@@ -22,7 +22,7 @@ interface DocumentContextProps {
 
 interface DocumentContextWrapperProps {
     children: React.ReactNode;
-  }
+}
 
 export const DocumentContext = createContext<DocumentContextProps>({
     documents: JSON.parse(localStorage.getItem("documents") || "") || textDocuments,

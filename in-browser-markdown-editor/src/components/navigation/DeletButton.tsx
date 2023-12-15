@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styled from 'styled-components'
 import iconDelete from '../../assets/icon-delete.svg'
+import { DocumentContext } from '../../documents/DocumentContext';
 
 interface DeleteButtonProps {
     setModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
@@ -23,14 +24,16 @@ const DeleteIcon = styled.img<{ disabled: boolean }>`
 `
 
 const DeletButton: React.FC<DeleteButtonProps> = ({ setModalOpen }) => {
-  return (
-    <DeletButtonStyle 
-        onClick={() => { setModalOpen(true)}} 
-        disabled={documents.length === 0 ? true : false}
-    >
-        <DeleteIcon src={iconDelete} disabled={documents.length === 0} />
-    </DeletButtonStyle>
-  )
+    const { documents } = useContext(DocumentContext)
+
+    return (
+        <DeletButtonStyle 
+            onClick={() => { setModalOpen(true)}} 
+            disabled={documents.length === 0 ? true : false}
+        >
+            <DeleteIcon src={iconDelete} disabled={documents.length === 0} />
+        </DeletButtonStyle>
+    )
 }
 
 export default DeletButton
