@@ -16,10 +16,8 @@ const CreateButtonStyle = styled.div`
     color: #ffffff;
     background-color: #e46643;
     font-family: "Roboto";
-    font-style: normal;
     font-weight: 400;
     font-size: 15px;
-    line-height: 18px;
     cursor: pointer;
 
     &:hover {
