@@ -9,6 +9,17 @@ interface Document {
     content: string;
 }
 
+interface DocumentContextProps {
+    documents: Document[];
+    activeDocument: Document;
+    createDocument: () => void;
+    deleteDocument: () => void;
+    onDocumentContentChange: (event: ChangeEvent<HTMLTextAreaElement>) => void;
+    onDocumentNameChange: (event: ChangeEvent<HTMLInputElement>) => void;
+    saveDocument: () => void;
+    changeActiveDocument: (id: string) => void;
+}
+
 const DocumentContext: React.FC = () => {
   return (
     <div>
