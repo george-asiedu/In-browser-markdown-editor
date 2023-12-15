@@ -77,6 +77,12 @@ const DocumentContextWrapper: React.FC = () => {
             createdAt: newDateString,
             content: '# Welcome to my markdown editor. Have fun!!!'
         }
+
+        setActiveDocument(newDocument)
+
+        setDocuments((existingDocuments) => {
+            return [...existingDocuments, newDocument]
+        })
     }
 
 
