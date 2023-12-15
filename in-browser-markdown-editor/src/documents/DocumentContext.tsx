@@ -32,7 +32,7 @@ export const DocumentContext = createContext<DocumentContextProps>({
 })
 
 
-const DocumentContextWrapper: React.FC = ({ children}) => {
+const DocumentContextWrapper: React.FC = () => {
     const [documents, setDocuments] = useState<Document[]>(
         JSON.parse(localStorage.getItem('documents') || '') || textDocuments
     )
@@ -51,9 +51,14 @@ const DocumentContextWrapper: React.FC = ({ children}) => {
         }
     }, [])
 
+    useEffect(() => {
+        localStorage.setItem('documents', JSON.stringify(documents))
+        localStorage.setItem('activeDocument', JSON.stringify(activeDocument))
+    }, [documents, activeDocument])
+
   return (
     <DocumentContext.Provider>
-        {children}
+        
     </DocumentContext.Provider>
   )
 }
