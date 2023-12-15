@@ -1,4 +1,4 @@
-import React, { createContext, useState } from 'react'
+import React, { createContext, useEffect, useState } from 'react'
 import { Theme, themes } from './Themes'
 
 interface ThemeContextProps {
@@ -19,6 +19,10 @@ const ThemeContextProvider: React.FC<ThemeContextProviderProps> = ({ children })
     const [theme, setTheme] = useState<Theme>(
         JSON.parse(localStorage.getItem('theme')!) || themes.light
     )
+
+    useEffect( () => {
+        localStorage.setItem('theme', JSON.stringify(theme))
+    }, [theme])
 
   return (
     <div>
