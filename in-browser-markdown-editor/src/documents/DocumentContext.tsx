@@ -85,6 +85,13 @@ const DocumentContextWrapper: React.FC = () => {
         })
     }
 
+    const onDocumentNameChange = (event: ChangeEvent<HTMLTextAreaElement>): void => {
+        setActiveDocument({
+            ...activeDocument,
+            content: event.target.value
+        })
+    }
+
 
   return (
     <DocumentContext.Provider>
