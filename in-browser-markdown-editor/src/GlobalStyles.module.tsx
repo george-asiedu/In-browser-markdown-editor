@@ -94,6 +94,7 @@ import { Theme } from "./themes/Themes";
     border-left: 4px solid #E46643;
     background-color: ${({ theme }) => theme.background.blockquote};;
   }
+
   blockquote p {
     font-family: 'Roboto Slab';
     font-style: normal;
@@ -102,6 +103,7 @@ import { Theme } from "./themes/Themes";
     line-height: 24px;
     color: ${({ theme }) => theme.color.blockquote};;
   }
+
   blockquote p a {
     font-family: 'Roboto Slab';
     font-style: normal;
@@ -110,6 +112,7 @@ import { Theme } from "./themes/Themes";
     line-height: 24px;
     color: ${({ theme }) => theme.color.blockquote};;
   }
+
   p code {
     font-family: 'Roboto Mono';
     font-style: normal;
@@ -118,6 +121,7 @@ import { Theme } from "./themes/Themes";
     line-height: 24px;
     color: ${({ theme }) => theme.color.code};;
   }
+
   pre {
     margin: 0px;
     padding: 24px 24px 24px 20px;
@@ -125,6 +129,7 @@ import { Theme } from "./themes/Themes";
     border-radius: 4px;
     background-color: ${({ theme }) => theme.background.blockquote};;
   }
+  
   pre code {
     white-space: pre-wrap;
     font-family: 'Roboto Mono';
