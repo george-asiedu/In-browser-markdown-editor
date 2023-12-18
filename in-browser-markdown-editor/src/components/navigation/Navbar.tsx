@@ -10,14 +10,20 @@ const NavbarStyles = styled.div`
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
+    shadow: 0px 3px 0px rgba(0, 0, 0, 0.4);
     transform: translateX(
     ${({ showSidebar }) => (showSidebar ? "250px" : "0px")}
     );
     transition: 0.3s;
 
     @media screen and (max-width: 768px) {
-    height: 56px;
+        height: 56px;
     }
+`
+
+const LeftContainer = styled.div`
+    display: flex;
+    flex-flow: row nowrap;
 `
 
 const Navbar: React.FC = () => {
