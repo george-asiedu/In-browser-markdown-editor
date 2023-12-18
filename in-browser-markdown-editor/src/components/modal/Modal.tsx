@@ -2,6 +2,11 @@ import React from 'react'
 import styled from 'styled-components'
 import Modal from 'react-modal'
 
+interface CustomModalProps {
+    modalOpen: boolean;
+    setModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
 const ModalStyles = styled(Modal)`
     position: fixed;
     top: 50%;
