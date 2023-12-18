@@ -24,6 +24,17 @@ const DocumentsContainer = styled.div`
     flex-flow: column nowrap;
     padding-left: 24px;
 `
+const DocumentsTitle = styled.div`
+    margin-top: 27px;
+    margin-bottom: 29px;
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 2px;
+    color: #7c8187;
+`
 
 const Sidebar: React.FC = () => {
     return (
