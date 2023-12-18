@@ -132,14 +132,23 @@ const DocumentNameEditor = styled.input`
     &:hover {
         cursor: pointer;
     }
+
     &:focus {
         outline: none;
         border-bottom: 1px solid #ffffff;
     }
+
     @media screen and (max-width: 767px) {
         width: calc(100vw - 216px);
         max-width: 400px;
     }
+`
+
+const RightContainer = styled.div`
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
 `
 
 const Navbar: React.FC = () => {
