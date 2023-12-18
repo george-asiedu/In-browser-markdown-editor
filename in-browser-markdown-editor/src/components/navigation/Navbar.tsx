@@ -13,7 +13,11 @@ interface NavbarProps {
     setModalOpen: (isOpen: boolean) => void;
 }
 
-const NavbarStyles = styled.div`
+interface NavbarStylesProps {
+    showSidebar: boolean;
+}
+
+const NavbarStyles = styled.div<NavbarStylesProps>`
     width: 100vw;
     height: 72px;
     color: #ffffff;
