@@ -28,10 +28,8 @@ const DocumentsTitle = styled.div`
     margin-top: 27px;
     margin-bottom: 29px;
     font-family: "Roboto";
-    font-style: normal;
     font-weight: 500;
     font-size: 14px;
-    line-height: 16px;
     letter-spacing: 2px;
     color: #7c8187;
 `
@@ -56,6 +54,35 @@ const DocumentLink = styled.div`
     &:hover {
         cursor: pointer;
     }
+`
+
+const DocumentIcon = styled.img`
+    margin-right: 16.29px;
+`
+
+const DocumentInformation = styled.div``;
+
+const DocumentDate = styled.div`
+    font-family: "Roboto";
+    font-weight: 300;
+    font-size: 13px;
+    color: #7c8187;
+`
+
+const DocumentName = styled.div`
+    font-family: "Roboto";
+    font-weight: 400;
+    font-size: 15px;
+    color: #ffffff;
+
+    ${DocumentLink}:hover & {
+        color: #e46643;
+    }
+`
+
+const ThemeContainer = styled.div`
+    padding-left: 24px;
+    padding-bottom: 24px;
 `
 
 const Sidebar: React.FC = () => {
