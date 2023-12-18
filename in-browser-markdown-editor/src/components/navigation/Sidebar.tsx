@@ -37,12 +37,25 @@ const DocumentsTitle = styled.div`
 `
 
 const DocumentsList = styled.div`
-  max-height: calc(100vh - 208px);
-  margin-top: 24px;
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: flex-start;
-  overflow-y: scroll;
+    max-height: calc(100vh - 208px);
+    margin-top: 24px;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+    overflow-y: scroll;
+`
+
+const DocumentLink = styled.div`
+    height: 36px;
+    margin-bottom: 26px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+
+    &:hover {
+        cursor: pointer;
+    }
 `
 
 const Sidebar: React.FC = () => {
