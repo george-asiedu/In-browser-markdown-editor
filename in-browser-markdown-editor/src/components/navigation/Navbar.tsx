@@ -109,6 +109,12 @@ const DocumentNameContainer = styled.div`
     flex-flow: column nowrap;
 `
 
+const DocumentName = styled.div`
+    @media screen and (max-width: 768px) {
+        display: none;
+    }
+`
+
 const Navbar: React.FC = () => {
   return (
     <div>
