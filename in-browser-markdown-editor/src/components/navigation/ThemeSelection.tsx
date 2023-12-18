@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styled from 'styled-components'
 import iconLightMode from '../../assets/icon-light-mode.svg'
 import iconDarkMode from '../../assets/icon-dark-mode.svg'
+
+import { ThemeContext } from '../../themes/ThemeContext'
 
 const ThemeSelctor = styled.div`
     width: 104px;
@@ -61,9 +63,10 @@ const LightIcon = styled.img`
 `
 
 const ThemeSelection: React.FC = () => {
-  return (
-    <div>ThemeSelection</div>
-  )
+    const { handleInputChange } = useContext(ThemeContext)
+    return (
+        <div>ThemeSelection</div>
+    )
 }
 
 export default ThemeSelection
