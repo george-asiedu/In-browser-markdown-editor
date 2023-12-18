@@ -49,9 +49,15 @@ const Text = styled.div`
 
 const SaveButton: React.FC = () => {
     const { documents, saveDocument } = useContext(DocumentContext)
-    
+
     return (
-        <div>SaveButton</div>
+        <SaveButtonStyles 
+            onClick={() => saveDocument()} 
+            disabled={documents.length === 0 ? true : false}
+        >
+            <SaveIcon src={iconSave} />
+            <Text>Save Changes</Text>
+        </SaveButtonStyles>
     )
 }
 
