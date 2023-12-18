@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styled from 'styled-components'
 import iconSave from '../../assets/icon-save.svg'
+
+import { DocumentContext } from '../../documents/DocumentContext'
 
 
 const SaveButtonStyles = styled.button`
@@ -46,9 +48,11 @@ const Text = styled.div`
 `
 
 const SaveButton: React.FC = () => {
-  return (
-    <div>SaveButton</div>
-  )
+    const { documents, saveDocument } = useContext(DocumentContext)
+    
+    return (
+        <div>SaveButton</div>
+    )
 }
 
 export default SaveButton
