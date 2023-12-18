@@ -77,19 +77,24 @@ const Divider = styled.div`
 `
 
 const DocumentContainer = styled.div`
-  height: 36px;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-  align-self: center;
+    height: 36px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-self: center;
 
-  @media screen and (max-width: 1020px) {
-    margin-left: 24px;
-  }
+    @media screen and (max-width: 1020px) {
+        margin-left: 24px;
+    }
 
-  @media screen and (max-width: 768px) {
-    height: 18px;
-  }
+    @media screen and (max-width: 768px) {
+        height: 18px;
+    }
+`
+
+const DocumentIcon = styled.img`
+    height: 16px;
+    align-self: center;
 `
 
 const Navbar: React.FC = () => {
