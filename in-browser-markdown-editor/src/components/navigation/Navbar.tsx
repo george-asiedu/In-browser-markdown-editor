@@ -97,6 +97,18 @@ const DocumentIcon = styled.img`
     align-self: center;
 `
 
+const DocumentNameContainer = styled.div`
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 300;
+    font-size: 13px;
+    line-height: 15px;
+    color: #c1c4cb;
+    margin-left: 16px;
+    display: flex;
+    flex-flow: column nowrap;
+`
+
 const Navbar: React.FC = () => {
   return (
     <div>
