@@ -36,6 +36,15 @@ const DocumentsTitle = styled.div`
     color: #7c8187;
 `
 
+const DocumentsList = styled.div`
+  max-height: calc(100vh - 208px);
+  margin-top: 24px;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-start;
+  overflow-y: scroll;
+`
+
 const Sidebar: React.FC = () => {
     return (
         
