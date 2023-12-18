@@ -1,10 +1,15 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import styled from 'styled-components'
 import iconDocument from '../../assets/icon-document.svg'
 
 import { DocumentContext } from '../../documents/DocumentContext'
 
-const sidebarStyles = styled.div`
+interface SidebarProps {
+    showSidebar: boolean;
+    handleSidebar: () => void;
+}
+
+const sidebarStyles = styled.div<{ showSidebar: boolean }>`
     height: 100vh;
     width: 250px;
     position: fixed;
@@ -89,8 +94,13 @@ const ThemeContainer = styled.div`
 
 const Sidebar: React.FC = ({ showSidebar, handleSidebar }) => {
     const { documents, changeActiveDocument } = useContext(DocumentContext)
+
+    useEffect(() => {}, [documents])
+
     return (
-        
+        <sidebarStyles>
+
+        </sidebarStyles>
     )
 }
 
