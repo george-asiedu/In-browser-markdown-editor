@@ -1,5 +1,5 @@
 import React, { createContext, ChangeEvent, useState, useEffect } from 'react'
-import textDocuments from './data.json'
+import content from './data.json'
 import { v4 as uuidv4 } from "uuid";
 
 export interface Document {
@@ -24,8 +24,10 @@ interface DocumentContextWrapperProps {
     children: React.ReactNode;
 }
 
+console.log(content)
+
 export const DocumentContext = createContext<DocumentContextProps>({
-    documents: JSON.parse(localStorage.getItem("documents") || "") || textDocuments,
+    documents: JSON.parse(localStorage.getItem("documents") || "") || content,
     activeDocument: {} as Document,
     createDocument: () => {},
     deleteDocument: () => {},
@@ -35,17 +37,16 @@ export const DocumentContext = createContext<DocumentContextProps>({
     changeActiveDocument: () => {}
 })
 
-
 const DocumentContextWrapper: React.FC<DocumentContextWrapperProps> = ({ children }) => {
     const [documents, setDocuments] = useState<Document[]>(
-        JSON.parse(localStorage.getItem('documents') || '') || textDocuments
+        JSON.parse(localStorage.getItem('documents') || '') || content
     )
 
     const [activeDocument, setActiveDocument] = useState<Document>(
         JSON.parse(
             localStorage.getItem('activeDocument') === 'undefined' ? '{}' 
             : localStorage.getItem('activeDocument') || ''
-        ) || textDocuments[0]
+        ) || content[0]
     )
 
     useEffect(() => {
@@ -66,7 +67,6 @@ const DocumentContextWrapper: React.FC<DocumentContextWrapperProps> = ({ childre
         localStorage.setItem('documents', JSON.stringify(documents))
         localStorage.setItem('activeDocument', JSON.stringify(activeDocument))
     }, [documents, activeDocument])
-
 
     const createDocument = (): void => {
         const newID = uuidv4()

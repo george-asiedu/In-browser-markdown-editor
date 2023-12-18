@@ -25,7 +25,7 @@ const App: React.FC = () => {
   return (
     <ThemeContextProvider>
       <ThemeProvider theme={theme}>
-        <GlobalStyle theme={themes.dark}/>
+        <GlobalStyle theme={themes.light}/>
         <StyledApp>
           <CustomModal modalOpen={modalOpen} setModalOpen={setModalOpen} />
             <Navigation
