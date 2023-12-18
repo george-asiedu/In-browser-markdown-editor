@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styled from 'styled-components'
 import iconDocument from '../../assets/icon-document.svg'
+
+import { DocumentContext } from '../../documents/DocumentContext'
 
 const sidebarStyles = styled.div`
     height: 100vh;
@@ -85,7 +87,8 @@ const ThemeContainer = styled.div`
     padding-bottom: 24px;
 `
 
-const Sidebar: React.FC = () => {
+const Sidebar: React.FC = ({ showSidebar, handleSidebar }) => {
+    const { documents, changeActiveDocument } = useContext(DocumentContext)
     return (
         
     )
