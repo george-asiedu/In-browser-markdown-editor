@@ -24,7 +24,7 @@ const App: React.FC = () => {
   return (
     <ThemeContextProvider>
       <ThemeProvider theme={theme}>
-        <GlobalStyle theme={themes.light}/>
+        <GlobalStyle theme={themes.dark}/>
         <StyledApp>
             <Navigation
                 showSidebar={showSidebar}
