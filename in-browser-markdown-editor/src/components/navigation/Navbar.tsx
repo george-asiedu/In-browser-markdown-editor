@@ -21,6 +21,11 @@ interface HamburgerButtonProps {
     onClick: () => void;
 }
 
+interface NavbarFCProps extends NavbarProps {
+    activeDocument: Document | null;
+    onDocumentNameChange: (event: ChangeEvent<HTMLInputElement>) => void;
+}
+
 const NavbarStyles = styled.div<NavbarStylesProps>`
     width: 100vw;
     height: 72px;
