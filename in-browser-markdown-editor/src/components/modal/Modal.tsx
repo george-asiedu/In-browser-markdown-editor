@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styled from 'styled-components'
 import Modal from 'react-modal'
+import { ThemeContext } from '../../themes/ThemeContext';
+import { DocumentContext } from '../../documents/DocumentContext';
 
 interface CustomModalProps {
     modalOpen: boolean;
@@ -32,7 +34,7 @@ const HeaderStyles = styled.div`
     color: ${({ theme }) => theme.color.htmlheaders};
 `
 
-const Textstyles = styled.div`
+const TextStyles = styled.div`
     width: 295px;
     font-family: "Roboto Slab";
     font-style: normal;
@@ -67,10 +69,35 @@ const ButtonStyles = styled.button`
     }
 `
 
-const CustomModal: React.FC = () => {
-  return (
-    <div></div>
-  )
+const CustomModal: React.FC<CustomModalProps> = ({ modalOpen, setModalOpen }) => {
+    const { theme } = useContext(ThemeContext)
+    const { deleteDocument } = useContext(DocumentContext)
+
+    return (
+        <ModalStyles
+            isOpen={modalOpen}
+            onRequestClose={() => setModalOpen(false)}
+            theme={theme}
+            style={{
+                overlay: {
+                    backgroundColor: 'rgba(124, 129, 135, 0.5)',
+                }
+            }}
+        >
+            <HeaderStyles theme={theme}>Delete this document?</HeaderStyles>
+            <TextStyles theme={theme}>
+                Are you sure you want to delete the 'welcome.md' and its content?
+                This action cannot be reveresed.
+            </TextStyles>
+            <ButtonStyles 
+                onClick={() => {
+                setModalOpen(false)
+                deleteDocument()
+            }}>
+                Confirm & Delete
+            </ButtonStyles>
+        </ModalStyles>
+    )
 }
 
 export default CustomModal
