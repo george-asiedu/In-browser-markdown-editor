@@ -166,18 +166,23 @@ const RightContainer = styled.div`
 const Navbar: React.FC = ({ showSidebar, handleSidebar, handleEnter, setModalOpen }) => {
     const { activeDocument, onDocumentNameChange } = useContext(DocumentContext)
 
-    const handleKeyUp = (event) => {
-        if(event.keyCode === 13) {
+    const handleKeyUp = (event: KeyboardEvent<HTMLInputElement>) => {
+        if(event.key === 'Enter') {
             event.preventDefault()
-            event.target.blur()
+            event.currentTarget.blur()
             handleEnter()
         }
     }
-  return (
-    <div>
 
-    </div>
-  )
+    const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
+        onDocumentNameChange(event);
+    };
+
+    return (
+        <div>
+
+        </div>
+    )
 }
 
 export default Navbar
