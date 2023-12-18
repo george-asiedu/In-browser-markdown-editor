@@ -38,6 +38,30 @@ const Textstyles = styled.div`
     color: ${({ theme }) => theme.color.previewbody};
 `
 
+const ButtonStyles = styled.button`
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 295px;
+    height: 40px;
+    margin: 0px;
+    padding: 0;
+    border: none;
+    border-radius: 4px;
+    color: #ffffff;
+    background-color: #e46643;
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+
+    &:hover {
+        background-color: #f39765;
+    }
+`
+
 const CustomModal: React.FC = () => {
   return (
     <div></div>
