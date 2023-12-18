@@ -4,6 +4,7 @@ import iconDocument from '../../assets/icon-document.svg'
 
 import { DocumentContext, Document } from '../../documents/DocumentContext'
 import CreateButton from './CreateButton';
+import ThemeSelection from './ThemeSelection';
 
 interface SidebarProps {
     showSidebar: boolean;
@@ -131,7 +132,7 @@ const Sidebar: React.FC<SidebarProps> = ({ showSidebar, handleSidebar }) => {
                 </DocumentsList>
             </DocumentsContainer>
             <ThemeContainer>
-                
+                <ThemeSelection />
             </ThemeContainer>
         </SidebarStyles>
     )
