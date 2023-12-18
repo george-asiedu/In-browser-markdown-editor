@@ -2,7 +2,7 @@ import React, { createContext, ChangeEvent, useState, useEffect } from 'react'
 import textDocuments from './data.json'
 import { v4 as uuidv4 } from "uuid";
 
-interface Document {
+export interface Document {
     id: string;
     name: string;
     createdAt: string;

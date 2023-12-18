@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from 'react'
 import styled from 'styled-components'
 import iconDocument from '../../assets/icon-document.svg'
 
-import { DocumentContext } from '../../documents/DocumentContext'
+import { DocumentContext, Document } from '../../documents/DocumentContext'
 import CreateButton from './CreateButton';
 
 interface SidebarProps {
@@ -103,7 +103,36 @@ const Sidebar: React.FC<SidebarProps> = ({ showSidebar, handleSidebar }) => {
             <DocumentsContainer>
                 <DocumentsTitle>MY DOCUMENTS</DocumentsTitle>
                 <CreateButton />
+                <DocumentsList>
+                    { documents &&
+                        documents.map((document: Document) => {
+                            return (
+                                <DocumentLink 
+                                    onClick={() => {
+                                        changeActiveDocument(document.id)
+                                        handleSidebar()
+                                    }}
+                                    key={document.id}
+                                >
+                                    <DocumentIcon src={iconDocument} />
+                                    <DocumentInformation>
+                                        <DocumentDate>{document.createdAt}</DocumentDate>
+                                        <DocumentName>
+                                            { document.name.length > 21
+                                                ? document.name.slice(0, 20) + '...'
+                                                : document.name
+                                            }
+                                        </DocumentName>
+                                    </DocumentInformation>
+                                </DocumentLink>
+                            )
+                        })
+                    }
+                </DocumentsList>
             </DocumentsContainer>
+            <ThemeContainer>
+                
+            </ThemeContainer>
         </SidebarStyles>
     )
 }
