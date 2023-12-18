@@ -17,11 +17,9 @@ const SaveButtonStyles = styled.button`
     border-radius: 4px;
     color: #ffffff;
     background-color: #e46643;
-    font-family: "Roboto";
-    font-style: normal;
+    font-family: "Roboto", sans-serif;
     font-weight: 400;
     font-size: 15px;
-    line-height: 18px;
     cursor: pointer;
 
     &:hover {
@@ -34,6 +32,11 @@ const SaveButtonStyles = styled.button`
         padding: 0;
         margin-right: 8px;
     }
+`
+
+const SaveIcon = styled.img`
+  height: 16px;
+  width: 16px;
 `
 
 const SaveButton: React.FC = () => {
