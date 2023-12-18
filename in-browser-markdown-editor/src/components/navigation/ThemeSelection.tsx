@@ -5,7 +5,7 @@ import iconDarkMode from '../../assets/icon-dark-mode.svg'
 
 import { ThemeContext } from '../../themes/ThemeContext'
 
-const ThemeSelctor = styled.div`
+const ThemeSelector = styled.div`
     width: 104px;
     display: flex;
     flex-flow: row nowrap;
@@ -50,7 +50,7 @@ const CheckboxStyles = styled.input`
     position: absolute;
     opacity: 0;
 
-    &:checked + ${Slider} {
+    &:checked + ${SliderStyles} {
         &:before {
             transform: translateX(24px);
         }
@@ -63,16 +63,27 @@ const LightIcon = styled.img`
 `
 
 const ThemeSelection: React.FC = () => {
-    const { handleInputChange } = useContext(ThemeContext)
+    const { handleThemeChange } = useContext(ThemeContext)
     const [checked, setChecked] = useState(false)
 
     const handleCheckedChange = (event: ChangeEvent<HTMLInputElement>) => {
         setChecked(event.target.checked)
         handleThemeChange()
     }
-    
+
     return (
-        <div>ThemeSelection</div>
+        <ThemeSelector>
+            <DarkIcon src={iconDarkMode} />
+            <SwitchLabel>
+                <CheckboxStyles 
+                    type='checkbox'
+                    checked={checked}
+                    onChange={handleCheckedChange}
+                />
+                <SliderStyles />
+            </SwitchLabel>
+            <LightIcon src={iconLightMode} />
+        </ThemeSelector>
     )
 }
 
