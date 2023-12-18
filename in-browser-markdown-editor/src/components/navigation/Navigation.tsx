@@ -2,6 +2,13 @@ import React from 'react'
 import styled from 'styled-components'
 import Navbar from './Navbar'
 
+interface NavigationProps {
+    showSidebar: boolean;
+    handleSidebar: () => void;
+    handleEnter: () => void;
+    setModalOpen: (isOpen: boolean) => void;
+}
+
 const NavigationStyles = styled.div``
 
 const Navigation: React.FC = ({
