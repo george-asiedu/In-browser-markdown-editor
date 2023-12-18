@@ -23,11 +23,6 @@ interface HamburgerButtonProps {
     onClick: () => void;
 }
 
-// interface NavbarFCProps extends NavbarProps {
-//     activeDocument: Document | null;
-//     onDocumentNameChange: (event: ChangeEvent<HTMLInputElement>) => void;
-// }
-
 const NavbarStyles = styled.div<NavbarStylesProps>`
     width: 100vw;
     height: 72px;
@@ -80,10 +75,8 @@ const Title = styled.div`
     justify-content: center;
     align-items: center;
     font-family: 'Roboto Slab', serif;
-    font-style: normal;
     font-weight: 700;
     font-size: 15px;
-    line-height: 18px;
     letter-spacing: 5px;
 
     @media screen and (max-width: 1020px) {
