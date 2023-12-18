@@ -17,6 +17,10 @@ interface NavbarStylesProps {
     showSidebar: boolean;
 }
 
+interface HamburgerButtonProps {
+    onClick: () => void;
+}
+
 const NavbarStyles = styled.div<NavbarStylesProps>`
     width: 100vw;
     height: 72px;
@@ -41,7 +45,7 @@ const LeftContainer = styled.div`
     flex-flow: row nowrap;
 `
 
-const HamburgerButton = styled.div`
+const HamburgerButton = styled.div<HamburgerButtonProps>`
     height: 72px;
     width: 72px;
     background-color: #35393f;
