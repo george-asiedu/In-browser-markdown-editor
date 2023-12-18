@@ -1,7 +1,11 @@
-import React, { useContext } from 'react'
+import React, { useContext, ChangeEvent, KeyboardEvent } from 'react'
 import styled from 'styled-components'
-import { DocumentContext } from '../../documents/DocumentContext'
+import iconMenu from '../../assets/icon-menu.svg'
+import iconClose from '../../assets/icon-close.svg'
+import iconDocument from '../../assets/icon-document.svg'
 
+
+import { DocumentContext } from '../../documents/DocumentContext'
 
 interface NavbarProps {
     showSidebar: boolean;
