@@ -3,13 +3,14 @@ import styled from 'styled-components'
 import iconDocument from '../../assets/icon-document.svg'
 
 import { DocumentContext } from '../../documents/DocumentContext'
+import CreateButton from './CreateButton';
 
 interface SidebarProps {
     showSidebar: boolean;
     handleSidebar: () => void;
 }
 
-const sidebarStyles = styled.div<{ showSidebar: boolean }>`
+const SidebarStyles = styled.div<{ showSidebar: boolean }>`
     height: 100vh;
     width: 250px;
     position: fixed;
@@ -92,15 +93,18 @@ const ThemeContainer = styled.div`
     padding-bottom: 24px;
 `
 
-const Sidebar: React.FC = ({ showSidebar, handleSidebar }) => {
+const Sidebar: React.FC<SidebarProps> = ({ showSidebar, handleSidebar }) => {
     const { documents, changeActiveDocument } = useContext(DocumentContext)
 
     useEffect(() => {}, [documents])
 
     return (
-        <sidebarStyles>
-
-        </sidebarStyles>
+        <SidebarStyles showSidebar={showSidebar}>
+            <DocumentsContainer>
+                <DocumentsTitle>MY DOCUMENTS</DocumentsTitle>
+                <CreateButton />
+            </DocumentsContainer>
+        </SidebarStyles>
     )
 }
 
