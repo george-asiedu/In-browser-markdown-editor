@@ -65,6 +65,17 @@ const Title = styled.div`
     }
 `
 
+const Divider = styled.div`
+    height: 40px;
+    margin-right: 24px;
+    border-left: 1px solid #5a6069;
+    align-self: center;
+
+    @media screen and (max-width: 1020px) {
+        display: none;
+    }
+`
+
 const Navbar: React.FC = () => {
   return (
     <div>
