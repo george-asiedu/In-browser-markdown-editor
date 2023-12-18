@@ -35,8 +35,14 @@ const SaveButtonStyles = styled.button`
 `
 
 const SaveIcon = styled.img`
-  height: 16px;
-  width: 16px;
+    height: 16px;
+    width: 16px;
+`
+
+const Text = styled.div`
+    @media screen and (max-width: 768px) {
+        display: none;
+    }
 `
 
 const SaveButton: React.FC = () => {
