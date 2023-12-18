@@ -1,6 +1,14 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styled from 'styled-components'
+import { DocumentContext } from '../../documents/DocumentContext'
 
+
+interface NavbarProps {
+    showSidebar: boolean;
+    handleSidebar: () => void;
+    handleEnter: () => void;
+    setModalOpen: (isOpen: boolean) => void;
+}
 
 const NavbarStyles = styled.div`
     width: 100vw;
@@ -151,7 +159,16 @@ const RightContainer = styled.div`
     align-items: center;
 `
 
-const Navbar: React.FC = () => {
+const Navbar: React.FC = ({ showSidebar, handleSidebar, handleEnter, setModalOpen }) => {
+    const { activeDocument, onDocumentNameChange } = useContext(DocumentContext)
+
+    const handleKeyUp = (event) => {
+        if(event.keyCode === 13) {
+            event.preventDefault()
+            event.target.blur()
+            handleEnter()
+        }
+    }
   return (
     <div>
 
