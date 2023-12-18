@@ -19,6 +19,12 @@ const sidebarStyles = styled.div`
     transition: 0.3s;
 `
 
+const DocumentsContainer = styled.div`
+    display: flex;
+    flex-flow: column nowrap;
+    padding-left: 24px;
+`
+
 const Sidebar: React.FC = () => {
     return (
         
