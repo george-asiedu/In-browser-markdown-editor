@@ -6,12 +6,12 @@ interface NavigationProps {
     showSidebar: boolean;
     handleSidebar: () => void;
     handleEnter: () => void;
-    setModalOpen: (isOpen: boolean) => void;
+    setModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const NavigationStyles = styled.div``
 
-const Navigation: React.FC = ({
+const Navigation: React.FC<NavigationProps> = ({
     showSidebar,
     handleSidebar,
     handleEnter,
@@ -24,7 +24,7 @@ const Navigation: React.FC = ({
                 showSidebar={showSidebar}
                 handleSidebar={handleSidebar}
                 handleEnter={handleEnter}
-                setModalOpen={setModalOpen} 
+                setModalOpen={setModalOpen}
             />
         </NavigationStyles>
     )
