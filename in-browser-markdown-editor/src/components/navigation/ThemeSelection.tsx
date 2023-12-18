@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { ChangeEvent, useContext, useState } from 'react'
 import styled from 'styled-components'
 import iconLightMode from '../../assets/icon-light-mode.svg'
 import iconDarkMode from '../../assets/icon-dark-mode.svg'
@@ -64,6 +64,13 @@ const LightIcon = styled.img`
 
 const ThemeSelection: React.FC = () => {
     const { handleInputChange } = useContext(ThemeContext)
+    const [checked, setChecked] = useState(false)
+
+    const handleCheckedChange = (event: ChangeEvent<HTMLInputElement>) => {
+        setChecked(event.target.checked)
+        handleThemeChange()
+    }
+    
     return (
         <div>ThemeSelection</div>
     )
