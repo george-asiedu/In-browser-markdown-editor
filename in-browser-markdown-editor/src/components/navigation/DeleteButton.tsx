@@ -23,7 +23,7 @@ const DeleteIcon = styled.img<{ disabled: boolean }>`
     }
 `
 
-const DeletButton: React.FC<DeleteButtonProps> = ({ setModalOpen }) => {
+const DeleteButton: React.FC<DeleteButtonProps> = ({ setModalOpen }) => {
     const { documents } = useContext(DocumentContext)
 
     return (
@@ -36,4 +36,4 @@ const DeletButton: React.FC<DeleteButtonProps> = ({ setModalOpen }) => {
     )
 }
 
-export default DeletButton
+export default DeleteButton

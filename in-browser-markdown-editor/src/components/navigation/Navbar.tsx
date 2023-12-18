@@ -4,6 +4,7 @@ import iconMenu from '../../assets/icon-menu.svg'
 import iconClose from '../../assets/icon-close.svg'
 import iconDocument from '../../assets/icon-document.svg'
 
+import DeleteButton from './DeleteButton'
 import { DocumentContext } from '../../documents/DocumentContext'
 
 interface NavbarProps {
@@ -21,10 +22,10 @@ interface HamburgerButtonProps {
     onClick: () => void;
 }
 
-interface NavbarFCProps extends NavbarProps {
-    activeDocument: Document | null;
-    onDocumentNameChange: (event: ChangeEvent<HTMLInputElement>) => void;
-}
+// interface NavbarFCProps extends NavbarProps {
+//     activeDocument: Document | null;
+//     onDocumentNameChange: (event: ChangeEvent<HTMLInputElement>) => void;
+// }
 
 const NavbarStyles = styled.div<NavbarStylesProps>`
     width: 100vw;
