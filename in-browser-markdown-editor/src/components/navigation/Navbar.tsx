@@ -12,7 +12,7 @@ const NavbarStyles = styled.div`
     justify-content: space-between;
     shadow: 0px 3px 0px rgba(0, 0, 0, 0.4);
     transform: translateX(
-    ${({ showSidebar }) => (showSidebar ? "250px" : "0px")}
+        ${({ showSidebar }) => (showSidebar ? "250px" : "0px")}
     );
     transition: 0.3s;
 
@@ -24,6 +24,25 @@ const NavbarStyles = styled.div`
 const LeftContainer = styled.div`
     display: flex;
     flex-flow: row nowrap;
+`
+
+const HamburgerButton = styled.div`
+    height: 72px;
+    width: 72px;
+    background-color: #35393f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    &:hover {
+        background-color: #e46643;
+    }
+
+    @media screen and (max-width: 768px) {
+        height: 56px;
+        width: 56px;
+    }
 `
 
 const Navbar: React.FC = () => {
