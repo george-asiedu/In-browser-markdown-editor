@@ -16,6 +16,17 @@ const ModalStyles = styled(Modal)`
     background-color: ${({ theme }) => theme.background.main};
 `
 
+const HeaderStyles = styled.div`
+  width: 295px;
+  font-family: "Roboto Slab";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 26px;
+  margin-bottom: 16px;
+  color: ${({ theme }) => theme.color.htmlheaders};
+`;
+
 const CustomModal: React.FC = () => {
   return (
     <div></div>
