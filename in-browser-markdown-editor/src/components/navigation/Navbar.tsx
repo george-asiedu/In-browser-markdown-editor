@@ -115,6 +115,33 @@ const DocumentName = styled.div`
     }
 `
 
+const DocumentNameEditor = styled.input`
+    width: 400px;
+    color: #ffffff;
+    background-color: #2b2d31;
+    border: none;
+    margin-bottom: 3px;
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    padding: 0px;
+    caret-color: #e46643;
+
+    &:hover {
+        cursor: pointer;
+    }
+    &:focus {
+        outline: none;
+        border-bottom: 1px solid #ffffff;
+    }
+    @media screen and (max-width: 767px) {
+        width: calc(100vw - 216px);
+        max-width: 400px;
+    }
+`
+
 const Navbar: React.FC = () => {
   return (
     <div>
