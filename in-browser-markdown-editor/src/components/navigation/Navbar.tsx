@@ -45,6 +45,26 @@ const HamburgerButton = styled.div`
     }
 `
 
+const MenuIcon = styled.img``
+
+const Title = styled.div`
+    height: 100%;
+    width: 184px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto Slab', serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 18px;
+    letter-spacing: 5px;
+
+    @media screen and (max-width: 1020px) {
+        display: none;
+    }
+`
+
 const Navbar: React.FC = () => {
   return (
     <div>
