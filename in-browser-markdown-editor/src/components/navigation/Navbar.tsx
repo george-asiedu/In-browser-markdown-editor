@@ -4,7 +4,6 @@ import iconMenu from '../../assets/icon-menu.svg'
 import iconClose from '../../assets/icon-close.svg'
 import iconDocument from '../../assets/icon-document.svg'
 
-
 import { DocumentContext } from '../../documents/DocumentContext'
 
 interface NavbarProps {
@@ -163,7 +162,7 @@ const RightContainer = styled.div`
     align-items: center;
 `
 
-const Navbar: React.FC = ({ showSidebar, handleSidebar, handleEnter, setModalOpen }) => {
+const Navbar: React.FC<NavbarProps> = ({ showSidebar, handleSidebar, handleEnter, setModalOpen }) => {
     const { activeDocument, onDocumentNameChange } = useContext(DocumentContext)
 
     const handleKeyUp = (event: KeyboardEvent<HTMLInputElement>) => {
@@ -179,9 +178,34 @@ const Navbar: React.FC = ({ showSidebar, handleSidebar, handleEnter, setModalOpe
     };
 
     return (
-        <div>
-
-        </div>
+        <NavbarStyles showSidebar={showSidebar}>
+            <LeftContainer>
+                <HamburgerButton onClick={handleSidebar}>
+                <MenuIcon src={showSidebar ? iconClose : iconMenu} />
+                </HamburgerButton>
+                <Title>MARKDOWN</Title>
+                <Divider />
+                <DocumentContainer>
+                <DocumentIcon src={iconDocument} />
+                <DocumentNameContainer>
+                    <DocumentName>Document Name</DocumentName>
+                    <DocumentNameEditor
+                    value={
+                        activeDocument ? activeDocument.name : "no available document"
+                    }
+                    disabled={!activeDocument}
+                    type="text"
+                    onChange={handleInputChange}
+                    onKeyUp={handleKeyUp}
+                    />
+                </DocumentNameContainer>
+                </DocumentContainer>
+            </LeftContainer>
+            <RightContainer>
+                <DeleteButton setModalOpen={setModalOpen} />
+                <SaveButton />
+            </RightContainer>
+        </NavbarStyles>
     )
 }
 
