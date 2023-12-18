@@ -17,15 +17,26 @@ const ModalStyles = styled(Modal)`
 `
 
 const HeaderStyles = styled.div`
-  width: 295px;
-  font-family: "Roboto Slab";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 26px;
-  margin-bottom: 16px;
-  color: ${({ theme }) => theme.color.htmlheaders};
-`;
+    width: 295px;
+    font-family: "Roboto Slab";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 26px;
+    margin-bottom: 16px;
+    color: ${({ theme }) => theme.color.htmlheaders};
+`
+
+const Textstyles = styled.div`
+    width: 295px;
+    font-family: "Roboto Slab";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    margin-bottom: 16px;
+    color: ${({ theme }) => theme.color.previewbody};
+`
 
 const CustomModal: React.FC = () => {
   return (
