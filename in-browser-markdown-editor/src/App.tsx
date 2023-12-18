@@ -4,6 +4,7 @@ import { themes } from './themes/Themes';
 import { ThemeContext, ThemeContextProvider } from './themes/ThemeContext';
 import { GlobalStyle } from './GlobalStyles.module';
 import Navigation from './components/navigation/Navigation';
+import CustomModal from './components/modal/Modal';
 
 const StyledApp = styled.div``;
 
@@ -26,6 +27,7 @@ const App: React.FC = () => {
       <ThemeProvider theme={theme}>
         <GlobalStyle theme={themes.dark}/>
         <StyledApp>
+          <CustomModal modalOpen={modalOpen} setModalOpen={setModalOpen} />
             <Navigation
                 showSidebar={showSidebar}
                 handleSidebar={handleSidebar}
