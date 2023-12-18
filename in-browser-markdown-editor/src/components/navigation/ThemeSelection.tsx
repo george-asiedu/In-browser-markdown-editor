@@ -11,6 +11,55 @@ const ThemeSelctor = styled.div`
     align-items: center;
 `
 
+const DarkIcon = styled.img`
+    width: 16.5px;
+    height: 16px;
+`
+
+const SwitchLabel = styled.label`
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+`
+
+const SliderStyles = styled.div`
+    position: relative;
+    width: 48px;
+    height: 24px;
+    background-color: #5a6069;
+    border-radius: 24px;
+    transition: 0.3s all;
+
+    &:before {
+        position: absolute;
+        content: "";
+        height: 12px;
+        width: 12px;
+        left: 6px;
+        bottom: 6px;
+        border-radius: 50%;
+        background-color: white;
+        transform: translateX(0);
+        transition: 0.3s all;
+    }
+`
+
+const CheckboxStyles = styled.input`
+    position: absolute;
+    opacity: 0;
+
+    &:checked + ${Slider} {
+        &:before {
+            transform: translateX(24px);
+        }
+    }
+`
+
+const LightIcon = styled.img`
+    width: 18px;
+    height: 18px;
+`
+
 const ThemeSelection: React.FC = () => {
   return (
     <div>ThemeSelection</div>
