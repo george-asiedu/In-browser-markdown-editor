@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import styled from 'styled-components'
+import styled, { DefaultTheme, ThemeProvider } from 'styled-components'
 import Modal from 'react-modal'
 import { ThemeContext } from '../../themes/ThemeContext';
 import { DocumentContext } from '../../documents/DocumentContext';
@@ -9,7 +9,15 @@ interface CustomModalProps {
     setModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const ModalStyles = styled(Modal)`
+interface StyledModalProps {
+    theme: DefaultTheme;
+}
+
+interface StyledComponentProps {
+    theme: DefaultTheme;
+}
+
+const ModalStyles = styled(Modal)<StyledModalProps>`
     position: fixed;
     top: 50%;
     left: 50%;
@@ -23,7 +31,7 @@ const ModalStyles = styled(Modal)`
     background-color: ${({ theme }) => theme.background.main};
 `
 
-const HeaderStyles = styled.div`
+const HeaderStyles = styled.div<StyledComponentProps>`
     width: 295px;
     font-family: "Roboto Slab";
     font-style: normal;
@@ -34,7 +42,7 @@ const HeaderStyles = styled.div`
     color: ${({ theme }) => theme.color.htmlheaders};
 `
 
-const TextStyles = styled.div`
+const TextStyles = styled.div<StyledComponentProps>`
     width: 295px;
     font-family: "Roboto Slab";
     font-style: normal;
@@ -45,7 +53,7 @@ const TextStyles = styled.div`
     color: ${({ theme }) => theme.color.previewbody};
 `
 
-const ButtonStyles = styled.button`
+const ButtonStyles = styled.button<StyledComponentProps>`
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
@@ -74,10 +82,10 @@ const CustomModal: React.FC<CustomModalProps> = ({ modalOpen, setModalOpen }) =>
     const { deleteDocument } = useContext(DocumentContext)
 
     return (
-        <ModalStyles
+        <ThemeProvider theme={theme}>
+            <ModalStyles
             isOpen={modalOpen}
             onRequestClose={() => setModalOpen(false)}
-            theme={theme}
             style={{
                 overlay: {
                     backgroundColor: 'rgba(124, 129, 135, 0.5)',
@@ -97,6 +105,7 @@ const CustomModal: React.FC<CustomModalProps> = ({ modalOpen, setModalOpen }) =>
                 Confirm & Delete
             </ButtonStyles>
         </ModalStyles>
+        </ThemeProvider>
     )
 }
 
