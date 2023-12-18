@@ -19,7 +19,10 @@ const DeletButtonStyle = styled.button`
 
 const DeleteIcon = styled.img<{ disabled: boolean }>`
     &:hover {
-        filter: ${({ disabled }) => disabled ? '' : 'invert(55%) sepia(52%) saturate(4781%) hue-rotate(339deg) brightness(99%) contrast(80%)'}
+        filter: ${({ disabled }) => 
+            disabled ? '' : 
+            'invert(55%) sepia(52%) saturate(4781%) hue-rotate(339deg) brightness(99%) contrast(80%)'
+        }
     }
 `
 
@@ -28,8 +31,8 @@ const DeleteButton: React.FC<DeleteButtonProps> = ({ setModalOpen }) => {
 
     return (
         <DeletButtonStyle 
-            onClick={() => { setModalOpen(true)}} 
-            disabled={documents.length === 0 ? true : false}
+            onClick={() => { setModalOpen((prev) => !prev)}}
+            disabled={ documents.length === 0 ? true : false }
         >
             <DeleteIcon src={iconDelete} disabled={documents.length === 0} />
         </DeletButtonStyle>

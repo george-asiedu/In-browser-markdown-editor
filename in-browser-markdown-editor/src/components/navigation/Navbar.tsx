@@ -5,14 +5,14 @@ import iconClose from '../../assets/icon-close.svg'
 import iconDocument from '../../assets/icon-document.svg'
 
 import DeleteButton from './DeleteButton'
-import { DocumentContext } from '../../documents/DocumentContext'
 import SaveButton from './SaveButton'
+import { DocumentContext } from '../../documents/DocumentContext'
 
 interface NavbarProps {
     showSidebar: boolean;
     handleSidebar: () => void;
     handleEnter: () => void;
-    setModalOpen: (isOpen: boolean) => void;
+    setModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 interface NavbarStylesProps {
@@ -196,24 +196,24 @@ const Navbar: React.FC<NavbarProps> = ({ showSidebar, handleSidebar, handleEnter
         <NavbarStyles showSidebar={showSidebar}>
             <LeftContainer>
                 <HamburgerButton onClick={handleSidebar}>
-                <MenuIcon src={showSidebar ? iconClose : iconMenu} />
+                    <MenuIcon src={showSidebar ? iconClose : iconMenu} />
                 </HamburgerButton>
                 <Title>MARKDOWN</Title>
                 <Divider />
                 <DocumentContainer>
-                <DocumentIcon src={iconDocument} />
-                <DocumentNameContainer>
-                    <DocumentName>Document Name</DocumentName>
-                    <DocumentNameEditor
-                    value={
-                        activeDocument ? activeDocument.name : "no available document"
-                    }
-                    disabled={!activeDocument}
-                    type="text"
-                    onChange={handleInputChange}
-                    onKeyUp={handleKeyUp}
-                    />
-                </DocumentNameContainer>
+                    <DocumentIcon src={iconDocument} />
+                    <DocumentNameContainer>
+                        <DocumentName>Document Name</DocumentName>
+                        <DocumentNameEditor
+                            value={
+                                activeDocument ? activeDocument.name : "no available document"
+                            }
+                            disabled={!activeDocument}
+                            type="text"
+                            onChange={handleInputChange}
+                            onKeyUp={handleKeyUp}
+                        />
+                    </DocumentNameContainer>
                 </DocumentContainer>
             </LeftContainer>
             <RightContainer>
