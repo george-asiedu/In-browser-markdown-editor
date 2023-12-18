@@ -6,6 +6,7 @@ import iconDocument from '../../assets/icon-document.svg'
 
 import DeleteButton from './DeleteButton'
 import { DocumentContext } from '../../documents/DocumentContext'
+import SaveButton from './SaveButton'
 
 interface NavbarProps {
     showSidebar: boolean;
