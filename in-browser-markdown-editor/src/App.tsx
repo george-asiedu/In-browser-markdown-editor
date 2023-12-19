@@ -24,22 +24,25 @@ const App: React.FC = () => {
   }
 
   return (
-    <DocumentContextWrapper>
-      <ThemeContextProvider>
-        <ThemeProvider theme={theme}>
-          <GlobalStyle theme={themes.dark}/>
-          <StyledApp>
-            <CustomModal modalOpen={modalOpen} setModalOpen={setModalOpen} />
-              <Navigation
-                  showSidebar={showSidebar}
-                  handleSidebar={handleSidebar}
-                  handleEnter={handleEnter}
-                  setModalOpen={setModalOpen}
-              />
-          </StyledApp>
-        </ThemeProvider>     
-      </ThemeContextProvider>
-    </DocumentContextWrapper>
+    <>
+      <GlobalStyle theme={theme} />
+        <StyledApp>
+          <CustomModal modalOpen={modalOpen} setModalOpen={setModalOpen} />
+            <Navigation
+                showSidebar={showSidebar}
+                handleSidebar={handleSidebar}
+                handleEnter={handleEnter}
+                setModalOpen={setModalOpen}
+            />
+        </StyledApp>
+    </>
+    // <DocumentContextWrapper>
+    //   <ThemeContextProvider>
+    //     <ThemeProvider theme={theme}>
+          
+    //     </ThemeProvider>     
+    //   </ThemeContextProvider>
+    // </DocumentContextWrapper>
   )
 }
 

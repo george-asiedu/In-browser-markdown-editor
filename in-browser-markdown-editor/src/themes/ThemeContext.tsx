@@ -32,7 +32,7 @@ export const ThemeContextProvider: React.FC<ThemeContextProviderProps> = ({ chil
     }, [theme])
 
     const handleThemeChange = () => {
-        setTheme((prevTheme) => prevTheme.name === themes.light.name ? themes.dark : themes.light)
+        setTheme((prevTheme) => prevTheme.name === 'dark' ? themes.dark : themes.light)
     }
 
   return (

@@ -119,9 +119,9 @@ const Sidebar: React.FC<SidebarProps> = ({ showSidebar, handleSidebar }: Sidebar
                                     <DocumentInformation>
                                         <DocumentDate>{document.createdAt}</DocumentDate>
                                         <DocumentName>
-                                            { document.name.length > 21
-                                                ? document.name.slice(0, 20) + '...'
-                                                : document.name
+                                            { document?.name?.length > 21
+                                                ? document?.name.slice(0, 20) + '...'
+                                                : document?.name
                                             }
                                         </DocumentName>
                                     </DocumentInformation>
