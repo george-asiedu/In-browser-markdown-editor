@@ -2,6 +2,7 @@ import React, { forwardRef, useContext, ChangeEvent, Ref } from "react";
 import styled from "styled-components";
 import { ThemeContext } from "../../themes/ThemeContext";
 import { DocumentContext } from "../../documents/DocumentContext";
+import { Theme } from "../../themes/Themes";
 
 interface MarkdownEditorProps {
   showPreview: boolean;
@@ -44,7 +45,7 @@ const ShowPreviewButton = styled(PreviewButton)`
   }
 `;
 
-const Editor = styled.textarea<{ theme: any }>`
+const Editor = styled.textarea<{ theme: Theme }>`
   height: calc(100% - 120px);
   padding-left: 16px;
   outline: none;
