@@ -4,6 +4,7 @@ import { Theme } from '../../themes/Themes'
 import PreviewButton from './PreviewButton'
 import { ThemeContext } from '../../themes/ThemeContext'
 import { DocumentContext } from '../../documents/DocumentContext'
+import Markdown from 'markdown-to-jsx'
 
 interface PreviewStylesProps {
     showPreview: boolean

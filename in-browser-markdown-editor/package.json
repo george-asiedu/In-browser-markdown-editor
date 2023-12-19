@@ -12,6 +12,7 @@
   "dependencies": {
     "@types/react-modal": "^3.16.3",
     "@types/uuid": "^9.0.7",
+    "markdown-to-jsx": "^7.3.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-modal": "^3.16.1",
