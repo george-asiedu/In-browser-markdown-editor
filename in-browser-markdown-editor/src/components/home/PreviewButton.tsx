@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styled from 'styled-components'
 import iconShowPreview from '../../assets/icon-show-preview.svg'
 import iconHidePreview from '../../assets/icon-hide-preview.svg'
 import { Theme } from '../../themes/Themes'
+import { ThemeContext } from '../../themes/ThemeContext'
 
 interface PreviewButtonStylesProps {
     theme: {
@@ -42,7 +43,8 @@ const PreviewIcon = styled.img`
   }
 `
 
-const PreviewButton: React.FC = () => {
+const PreviewButton: React.FC<PreviewButtonProps> = ({ showPreview, handlePreview, className}) => {
+    const { theme } = useContext(ThemeContext)
   return (
     <div>
 
