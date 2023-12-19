@@ -12,6 +12,12 @@ interface PreviewButtonStylesProps {
     }
 }
 
+interface PreviewButtonProps {
+    showPreview: boolean
+    handlePreview: () => void
+    className?: string
+}
+
 const PreviewButtonStyles = styled.div<PreviewButtonStylesProps>`
     height: 18px;
     width: 18px;
