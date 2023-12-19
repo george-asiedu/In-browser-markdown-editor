@@ -23,7 +23,7 @@ const StyledEditorContainer = styled.div<{ showPreview: boolean }>`
     }
 `;
 
-const TitleContainer = styled.div`
+const TitleContainer = styled.div<{ theme: Theme }>`
     height: 42px;
     font-family: "Roboto";
     font-style: normal;

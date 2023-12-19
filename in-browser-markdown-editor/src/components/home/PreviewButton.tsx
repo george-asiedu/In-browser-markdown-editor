@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import iconShowPreview from '../../assets/icon-show-preview.svg'
 import iconHidePreview from '../../assets/icon-hide-preview.svg'
+import { Theme } from '../../themes/Themes'
 
 interface PreviewButtonStylesProps {
     theme: {
@@ -10,6 +11,23 @@ interface PreviewButtonStylesProps {
         }
     }
 }
+
+const PreviewButtonStyles = styled.div<PreviewButtonStylesProps>`
+    height: 18px;
+    width: 18px;
+    margin-right: 24px;
+    padding: 0%;
+    cursor: pointer;
+    border: none;
+    background-color: ${({ theme }) => theme.background.sectionheader};
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+        color: #e46643;
+    }
+`
 
 const PreviewButton: React.FC = () => {
   return (
