@@ -56,10 +56,22 @@ const PreviewWindow: React.FC<PreviewWindowProps> = ({ showPreview, handlePrevie
     const { theme } = useContext(ThemeContext)
     const { activeDocument } = useContext(DocumentContext)
 
-    
-  return (
-    <div>PreviewWindow</div>
-  )
+
+    return (
+        <PreviewStyles theme={theme} showPreview={showPreview}>
+            <TitleContainer theme={theme}>
+                PREVIEW
+                <ShowMarkdownButton
+                    showPreview={showPreview}
+                    handlePreview={handlePreview}
+                    isPreviewWindow={true}
+                />
+            </TitleContainer>
+            <MarkdownContainer>
+                <Markdown></Markdown>
+            </MarkdownContainer>
+        </PreviewStyles>
+    )
 }
 
 export default PreviewWindow
