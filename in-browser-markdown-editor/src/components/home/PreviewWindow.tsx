@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styled from 'styled-components'
 import { Theme } from '../../themes/Themes'
 import PreviewButton from './PreviewButton'
+import { ThemeContext } from '../../themes/ThemeContext'
+import { DocumentContext } from '../../documents/DocumentContext'
 
 interface PreviewStylesProps {
     showPreview: boolean
@@ -50,7 +52,11 @@ const MarkdownContainer = styled.div`
     overflow: auto;
 `
 
-const PreviewWindow: React.FC = () => {
+const PreviewWindow: React.FC<PreviewWindowProps> = ({ showPreview, handlePreview }) => {
+    const { theme } = useContext(ThemeContext)
+    const { activeDocument } = useContext(DocumentContext)
+
+    
   return (
     <div>PreviewWindow</div>
   )
