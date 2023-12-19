@@ -29,6 +29,17 @@ const Divider = styled.div<{ theme: Theme }>`
     }
 `
 
+const createDocumentMessage = styled.div<{ theme: Theme}>`
+    margin-top: 12px;
+    margin-left: 16px;
+    font-family: "Roboto Mono";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: ${(props) => props.theme.color.markdownbody};
+`
+
 const Home: React.FC = () => {
   return (
     <div>Home</div>
