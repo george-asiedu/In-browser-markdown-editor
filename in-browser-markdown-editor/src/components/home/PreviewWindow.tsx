@@ -7,6 +7,11 @@ interface PreviewStylesProps {
     showPreview: boolean
 }
 
+interface PreviewWindowProps {
+    showPreview: boolean
+    handlePreview: () => void
+}
+
 const PreviewStyles = styled.div<PreviewStylesProps>`
     display: flex;
     flex-flow: column nowrap;
