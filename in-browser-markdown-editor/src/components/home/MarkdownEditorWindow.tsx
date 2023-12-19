@@ -1,5 +1,7 @@
-import React from 'react'
+import React, { ChangeEvent, forwardRef, useContext } from 'react'
 import styled from 'styled-components'
+import { ThemeContext } from '../../themes/ThemeContext'
+import { DocumentContext } from '../../documents/DocumentContext'
 
 interface MarkdownEditorProps {
     showPreview: boolean
@@ -56,7 +58,13 @@ const Editor = styled.textarea<{ theme: any }>`
     background-color: ${({ theme }) => theme.background.main};
 `
 
-const MarkdownEditorWindow: React.FC = () => {
+const MarkdownEditorWindow: React.FC = forwardRef<HTMLTextAreaElement, MarkdownEditorProps>(props, inputRef) => {
+    const { theme } = useContext(ThemeContext)
+    const { activeDocument, onDocumentContentChange } = useContext(DocumentContext)
+
+    const handleChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
+        onDocumentContentChange(e.target.value)
+    }
   return (
     <div>
 
