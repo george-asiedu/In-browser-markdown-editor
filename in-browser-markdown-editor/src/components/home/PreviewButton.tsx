@@ -3,14 +3,7 @@ import styled from 'styled-components'
 import iconShowPreview from '../../assets/icon-show-preview.svg'
 import iconHidePreview from '../../assets/icon-hide-preview.svg'
 import { ThemeContext } from '../../themes/ThemeContext'
-
-interface PreviewButtonStylesProps {
-    theme: {
-        background: {
-            sectionheader: string
-        }
-    }
-}
+import { Theme } from '../../themes/Themes'
 
 interface PreviewButtonProps {
     showPreview: boolean
@@ -19,7 +12,7 @@ interface PreviewButtonProps {
     className?: string
 }
 
-const PreviewButtonStyles = styled.div<PreviewButtonStylesProps>`
+const PreviewButtonStyles = styled.div<{ theme: Theme}>`
     height: 18px;
     width: 18px;
     margin-right: 24px;

@@ -6,16 +6,12 @@ import { ThemeContext } from '../../themes/ThemeContext'
 import { DocumentContext } from '../../documents/DocumentContext'
 import Markdown from 'markdown-to-jsx'
 
-interface PreviewStylesProps {
-    showPreview: boolean
-}
-
 interface PreviewWindowProps {
     showPreview: boolean
     handlePreview: () => void
 }
 
-const PreviewStyles = styled.div<PreviewStylesProps>`
+const PreviewStyles = styled.div<{ showPreview: boolean; theme: Theme }>`
     display: flex;
     flex-flow: column nowrap;
     height: 100%;

@@ -17,8 +17,8 @@ const HomeStyles = styled.div<{ showSidebar: boolean ; theme: Theme}>`
     height: 100%;
     width: 100%;
     position: fixed;
-    color: ${(props) => props.theme.color.markdownbody};
-    background-color: ${(props) => props.theme.background.main};
+  color: ${({theme}) => theme.color.markdownbody};
+    background-color: ${({theme}) => theme.background.main};
     transform: translateX(${({ showSidebar }) => (showSidebar ? "250px" : "0px")});
     transition: 0.3s;
 `
@@ -41,7 +41,7 @@ const CreateDocumentMessage = styled.div<{ theme: Theme}>`
     font-weight: 400;
     font-size: 14px;
     line-height: 24px;
-    color: ${(props) => props.theme.color.markdownbody};
+    color: ${({theme}) => theme.color.markdownbody};
 `
 
 const Home: React.FC<HomeProps> = ({ inputRef, showSidebar }) => {
