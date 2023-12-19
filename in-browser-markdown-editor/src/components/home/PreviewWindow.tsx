@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Theme } from '../../themes/Themes'
+import PreviewButton from './PreviewButton'
 
 interface PreviewStylesProps {
     showPreview: boolean
@@ -19,7 +20,7 @@ const PreviewStyles = styled.div<PreviewStylesProps>`
     }
 `
 
-const TitleContainer = styled.div<{theme: Theme}>`
+const TitleContainer = styled.div<{ theme: Theme }>`
     height: 42px;
     font-family: "Roboto";
     font-style: normal;
@@ -33,6 +34,15 @@ const TitleContainer = styled.div<{theme: Theme}>`
     justify-content: space-between;
     color: ${({ theme }) => theme.color.sectionheader};
     background-color: ${({ theme }) => theme.background.sectionheader};
+`
+
+const ShowMarkdownButton = styled(PreviewButton)``
+
+const MarkdownContainer = styled.div`
+    height: calc(100% - 120px);
+    padding-left: 16px;
+    padding-right: 24px;
+    overflow: auto;
 `
 
 const PreviewWindow: React.FC = () => {
