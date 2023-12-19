@@ -1,6 +1,8 @@
-import React from "react"
+import React, { useContext, useState } from "react"
 import styled from "styled-components"
 import { Theme } from '../../themes/Themes'
+import { ThemeContext } from "../../themes/ThemeContext"
+import { DocumentContext } from "../../documents/DocumentContext"
 
 interface HomeProps {
   inputRef: React.RefObject<any>
@@ -40,7 +42,15 @@ const createDocumentMessage = styled.div<{ theme: Theme}>`
     color: ${(props) => props.theme.color.markdownbody};
 `
 
-const Home: React.FC = () => {
+const Home: React.FC<HomeProps> = ({ inputRef, showSidebar }) => {
+  const { theme } = useContext(ThemeContext)
+  const { activeDocument } = useContext(DocumentContext)
+  const [ showPreview, setShowPreview ] = useState(false)
+
+  const handlePreview = () => {
+    setShowPreview((prev) => !prev)
+  }
+  
   return (
     <div>Home</div>
   )
