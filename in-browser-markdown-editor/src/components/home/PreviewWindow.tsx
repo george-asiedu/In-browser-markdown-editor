@@ -69,10 +69,14 @@ const PreviewWindow: React.FC<PreviewWindowProps> = ({ showPreview, handlePrevie
                 />
             </TitleContainer>
             <MarkdownContainer>
-                <Markdown></Markdown>
+                <Markdown>
+                    {activeDocument ? activeDocument.content : '#Welcome !!!'}
+                </Markdown>
             </MarkdownContainer>
         </PreviewStyles>
     )
 }
+
+PreviewWindow.displayName = 'MarkdownEditor'
 
 export default PreviewWindow
