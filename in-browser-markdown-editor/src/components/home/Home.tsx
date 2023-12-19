@@ -19,6 +19,16 @@ const HomeStyles = styled.div<{ showSidebar: boolean ; theme: Theme}>`
     transition: 0.3s;
 `
 
+const Divider = styled.div<{ theme: Theme }>`
+    height: 100%;
+    width: 1px;
+    background-color: ${({ theme }) => theme.divider};
+
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
+`
+
 const Home: React.FC = () => {
   return (
     <div>Home</div>
