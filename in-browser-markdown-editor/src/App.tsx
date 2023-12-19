@@ -1,11 +1,9 @@
 import React, { useContext, useState, useRef } from 'react';
-import styled, { ThemeProvider } from 'styled-components'
-import { themes } from './themes/Themes';
-import { ThemeContext, ThemeContextProvider } from './themes/ThemeContext';
+import styled from 'styled-components'
+import { ThemeContext } from './themes/ThemeContext';
 import { GlobalStyle } from './GlobalStyles.module';
 import Navigation from './components/navigation/Navigation';
 import CustomModal from './components/modal/Modal';
-import DocumentContextWrapper from './documents/DocumentContext';
 
 const StyledApp = styled.div``;
 
