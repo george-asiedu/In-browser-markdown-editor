@@ -29,6 +29,13 @@ const PreviewButtonStyles = styled.div<PreviewButtonStylesProps>`
     }
 `
 
+const PreviewIcon = styled.img`
+  &:hover {
+    filter: invert(55%) sepia(52%) saturate(4781%) hue-rotate(339deg)
+      brightness(99%) contrast(80%);
+  }
+`
+
 const PreviewButton: React.FC = () => {
   return (
     <div>
