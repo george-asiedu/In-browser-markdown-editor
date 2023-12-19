@@ -1,8 +1,10 @@
-import React, { useContext, useState } from "react"
+import React, { useContext, useState, useRef } from "react"
 import styled from "styled-components"
 import { Theme } from '../../themes/Themes'
 import { ThemeContext } from "../../themes/ThemeContext"
 import { DocumentContext } from "../../documents/DocumentContext"
+import MarkdownEditorWindow from "./MarkdownEditorWindow"
+import PreviewWindow from "./PreviewWindow"
 
 interface HomeProps {
   inputRef: React.RefObject<any>
@@ -31,7 +33,7 @@ const Divider = styled.div<{ theme: Theme }>`
     }
 `
 
-const createDocumentMessage = styled.div<{ theme: Theme}>`
+const CreateDocumentMessage = styled.div<{ theme: Theme}>`
     margin-top: 12px;
     margin-left: 16px;
     font-family: "Roboto Mono";
@@ -50,10 +52,27 @@ const Home: React.FC<HomeProps> = ({ inputRef, showSidebar }) => {
   const handlePreview = () => {
     setShowPreview((prev) => !prev)
   }
-  
+
   return (
-    <div>Home</div>
+    <HomeStyles showSidebar={showSidebar} theme={theme}>
+        { activeDocument ? (
+          <>
+            <MarkdownEditorWindow
+              ref={inputRef}
+              showPreview={showPreview}
+              handlePreview={handlePreview}
+            />
+            <Divider theme={theme} />
+            <PreviewWindow showPreview={showPreview} handlePreview={handlePreview} />
+          </>
+        ) : (
+          <CreateDocumentMessage  theme={theme}>
+              Looks like you deleted everything! Please create a new document in the sidebar :
+          </CreateDocumentMessage>
+        )}
+    </HomeStyles>
   )
 }
 
+Home.displayName = "Home";
 export default Home
