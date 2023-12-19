@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
-import styled, { DefaultTheme, ThemeProvider } from 'styled-components'
+import styled, { ThemeProvider } from 'styled-components'
 import Modal from 'react-modal'
+import { Theme } from '../../themes/Themes';
 import { ThemeContext } from '../../themes/ThemeContext';
 import { DocumentContext } from '../../documents/DocumentContext';
 
@@ -9,15 +10,7 @@ interface CustomModalProps {
     setModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-interface StyledModalProps {
-    theme: DefaultTheme;
-}
-
-interface StyledComponentProps {
-    theme: DefaultTheme;
-}
-
-const ModalStyles = styled(Modal)<StyledModalProps>`
+const ModalStyles = styled(Modal)<{ theme: Theme }>`
     position: fixed;
     top: 50%;
     left: 50%;
@@ -31,7 +24,7 @@ const ModalStyles = styled(Modal)<StyledModalProps>`
     background-color: ${({ theme }) => theme.background.main};
 `
 
-const HeaderStyles = styled.div<StyledComponentProps>`
+const HeaderStyles = styled.div<{ theme: Theme }>`
     width: 295px;
     font-family: "Roboto Slab";
     font-style: normal;
@@ -42,7 +35,7 @@ const HeaderStyles = styled.div<StyledComponentProps>`
     color: ${({ theme }) => theme.color.htmlheaders};
 `
 
-const TextStyles = styled.div<StyledComponentProps>`
+const TextStyles = styled.div<{ theme: Theme }>`
     width: 295px;
     font-family: "Roboto Slab";
     font-style: normal;
@@ -53,7 +46,7 @@ const TextStyles = styled.div<StyledComponentProps>`
     color: ${({ theme }) => theme.color.previewbody};
 `
 
-const ButtonStyles = styled.button<StyledComponentProps>`
+const ButtonStyles = styled.button<{ theme: Theme }>`
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
