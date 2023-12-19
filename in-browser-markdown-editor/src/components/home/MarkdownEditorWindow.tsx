@@ -35,6 +35,13 @@ const TitleContainer = styled.div`
     background-color: ${({ theme }) => theme.background.sectionheader};
 `
 
+const ShowPreviewButton = styled(PreviewButton)`
+    display: none;
+    @media screen and (max-width: 768px) {
+        display: block;
+    }
+`
+
 const MarkdownEditorWindow: React.FC = () => {
   return (
     <div>
