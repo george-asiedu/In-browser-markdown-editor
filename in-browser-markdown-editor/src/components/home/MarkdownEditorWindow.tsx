@@ -42,6 +42,20 @@ const ShowPreviewButton = styled(PreviewButton)`
     }
 `
 
+const Editor = styled.textarea<{ theme: any }>`
+    height: calc(100% - 120px);
+    padding-left: 16px;
+    outline: none;
+    border: none;
+    font-family: "Roboto Mono";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: ${({ theme }) => theme.color.markdownbody};
+    background-color: ${({ theme }) => theme.background.main};
+`
+
 const MarkdownEditorWindow: React.FC = () => {
   return (
     <div>
