@@ -19,6 +19,22 @@ const MarkdownEditorStyles = styled.div<{ showPreview: boolean}>`
     }
 `
 
+const TitleContainer = styled.div`
+    height: 42px;
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 2px;
+    padding-left: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: ${({ theme }) => theme.color.sectionheader};
+    background-color: ${({ theme }) => theme.background.sectionheader};
+`
+
 const MarkdownEditorWindow: React.FC = () => {
   return (
     <div>
