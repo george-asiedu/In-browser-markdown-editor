@@ -15,6 +15,7 @@ interface PreviewButtonStylesProps {
 interface PreviewButtonProps {
     showPreview: boolean
     handlePreview: () => void
+    isPreviewWindow: boolean 
     className?: string
 }
 
