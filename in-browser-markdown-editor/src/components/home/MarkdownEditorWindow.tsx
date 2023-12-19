@@ -1,4 +1,4 @@
-import React, { forwardRef, useContext, ChangeEvent, Ref } from "react";
+import { forwardRef, useContext, ChangeEvent, Ref } from "react";
 import styled from "styled-components";
 import { ThemeContext } from "../../themes/ThemeContext";
 import { DocumentContext } from "../../documents/DocumentContext";
@@ -60,22 +60,22 @@ const Editor = styled.textarea<{ theme: Theme }>`
     background-color: ${({ theme }) => theme.background.main};
 `;
 
-const MarkdownEditorWindow: React.FC<MarkdownEditorProps> = forwardRef(
-    ({ showPreview, handlePreview }, ref: Ref<HTMLTextAreaElement>) => {
-      const { theme } = useContext(ThemeContext)
-      const { activeDocument, onDocumentContentChange } = useContext(DocumentContext)
-
+const MarkdownEditorWindow = forwardRef(
+    (props: MarkdownEditorProps, ref: Ref<HTMLTextAreaElement>) => {
+      const { theme } = useContext(ThemeContext);
+      const { activeDocument, onDocumentContentChange } = useContext(DocumentContext);
+  
       const handleChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
         onDocumentContentChange(event);
-      }
-
+      };
+  
       return (
-        <StyledEditorContainer showPreview={showPreview}>
+        <StyledEditorContainer showPreview={props.showPreview}>
           <TitleContainer theme={theme}>
             MARKDOWN
             <ShowPreviewButton
-              showPreview={showPreview}
-              handlePreview={handlePreview}
+              showPreview={props.showPreview}
+              handlePreview={props.handlePreview}
               isPreviewWindow={false}
             />
           </TitleContainer>
@@ -88,7 +88,8 @@ const MarkdownEditorWindow: React.FC<MarkdownEditorProps> = forwardRef(
         </StyledEditorContainer>
       );
     }
-  );
+);
+  
 
 MarkdownEditorWindow.displayName = "MarkdownEditor";
 export default MarkdownEditorWindow;

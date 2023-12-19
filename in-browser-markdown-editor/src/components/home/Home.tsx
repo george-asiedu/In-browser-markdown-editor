@@ -1,4 +1,4 @@
-import React, { useContext, useState, useRef } from "react"
+import React, { useContext, useState } from "react"
 import styled from "styled-components"
 import { Theme } from '../../themes/Themes'
 import { ThemeContext } from "../../themes/ThemeContext"
@@ -7,7 +7,7 @@ import MarkdownEditorWindow from "./MarkdownEditorWindow"
 import PreviewWindow from "./PreviewWindow"
 
 interface HomeProps {
-  inputRef: React.RefObject<any>
+  inputRef: React.RefObject<HTMLTextAreaElement>
   showSidebar: boolean
 }
 
@@ -55,21 +55,21 @@ const Home: React.FC<HomeProps> = ({ inputRef, showSidebar }) => {
 
   return (
     <HomeStyles showSidebar={showSidebar} theme={theme}>
-        { activeDocument ? (
-          <>
-            <MarkdownEditorWindow
-              ref={inputRef}
-              showPreview={showPreview}
-              handlePreview={handlePreview}
-            />
-            <Divider theme={theme} />
-            <PreviewWindow showPreview={showPreview} handlePreview={handlePreview} />
-          </>
-        ) : (
-          <CreateDocumentMessage  theme={theme}>
-              Looks like you deleted everything! Please create a new document in the sidebar :
-          </CreateDocumentMessage>
-        )}
+      {activeDocument ? (
+        <>
+          <MarkdownEditorWindow
+            ref={inputRef}
+            showPreview={showPreview}
+            handlePreview={handlePreview}
+          />
+          <Divider theme={theme} />
+          <PreviewWindow showPreview={showPreview} handlePreview={handlePreview} />
+        </>
+      ) : (
+        <CreateDocumentMessage theme={theme}>
+          Looks like you deleted everything! Please create a new document in the sidebar 
+        </CreateDocumentMessage>
+      )}
     </HomeStyles>
   )
 }
