@@ -5,6 +5,7 @@ import { ThemeContext, ThemeContextProvider } from './themes/ThemeContext';
 import { GlobalStyle } from './GlobalStyles.module';
 import Navigation from './components/navigation/Navigation';
 import CustomModal from './components/modal/Modal';
+import DocumentContextWrapper from './documents/DocumentContext';
 
 const StyledApp = styled.div``;
 
@@ -23,20 +24,22 @@ const App: React.FC = () => {
   }
 
   return (
-    <ThemeContextProvider>
-      <ThemeProvider theme={theme}>
-        <GlobalStyle theme={themes.light}/>
-        <StyledApp>
-          <CustomModal modalOpen={modalOpen} setModalOpen={setModalOpen} />
-            <Navigation
-                showSidebar={showSidebar}
-                handleSidebar={handleSidebar}
-                handleEnter={handleEnter}
-                setModalOpen={setModalOpen}
-             />
-        </StyledApp>
-      </ThemeProvider>     
-    </ThemeContextProvider>
+    <DocumentContextWrapper>
+      <ThemeContextProvider>
+        <ThemeProvider theme={theme}>
+          <GlobalStyle theme={themes.dark}/>
+          <StyledApp>
+            <CustomModal modalOpen={modalOpen} setModalOpen={setModalOpen} />
+              <Navigation
+                  showSidebar={showSidebar}
+                  handleSidebar={handleSidebar}
+                  handleEnter={handleEnter}
+                  setModalOpen={setModalOpen}
+              />
+          </StyledApp>
+        </ThemeProvider>     
+      </ThemeContextProvider>
+    </DocumentContextWrapper>
   )
 }
 

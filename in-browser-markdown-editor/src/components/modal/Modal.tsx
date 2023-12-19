@@ -91,20 +91,20 @@ const CustomModal: React.FC<CustomModalProps> = ({ modalOpen, setModalOpen }) =>
                     backgroundColor: 'rgba(124, 129, 135, 0.5)',
                 }
             }}
-        >
-            <HeaderStyles theme={theme}>Delete this document?</HeaderStyles>
-            <TextStyles theme={theme}>
-                Are you sure you want to delete the 'welcome.md' and its content?
-                This action cannot be reveresed.
-            </TextStyles>
-            <ButtonStyles 
-                onClick={() => {
-                setModalOpen(false)
-                deleteDocument()
-            }}>
-                Confirm & Delete
-            </ButtonStyles>
-        </ModalStyles>
+            >
+                <HeaderStyles theme={theme}>Delete this document?</HeaderStyles>
+                <TextStyles theme={theme}>
+                    Are you sure you want to delete the 'welcome.md' and its content?
+                    This action cannot be reveresed.
+                </TextStyles>
+                <ButtonStyles 
+                    onClick={() => {
+                    setModalOpen(false)
+                    deleteDocument()
+                }}>
+                    Confirm & Delete
+                </ButtonStyles>
+            </ModalStyles>
         </ThemeProvider>
     )
 }

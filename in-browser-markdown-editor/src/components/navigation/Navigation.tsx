@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import Navbar from './Navbar'
+import Sidebar from './Sidebar';
 
 interface NavigationProps {
     showSidebar: boolean;
@@ -25,6 +26,10 @@ const Navigation: React.FC<NavigationProps> = ({
                 handleSidebar={handleSidebar}
                 handleEnter={handleEnter}
                 setModalOpen={setModalOpen}
+            />
+            <Sidebar  
+                showSidebar={showSidebar}
+                handleSidebar={handleSidebar}
             />
         </NavigationStyles>
     )

@@ -94,7 +94,7 @@ const ThemeContainer = styled.div`
     padding-bottom: 24px;
 `
 
-const Sidebar: React.FC<SidebarProps> = ({ showSidebar, handleSidebar }) => {
+const Sidebar: React.FC<SidebarProps> = ({ showSidebar, handleSidebar }: SidebarProps) => {
     const { documents, changeActiveDocument } = useContext(DocumentContext)
 
     useEffect(() => {}, [documents])
