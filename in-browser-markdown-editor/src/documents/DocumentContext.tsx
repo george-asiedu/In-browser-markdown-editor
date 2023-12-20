@@ -18,6 +18,7 @@ interface DocumentContextProps {
   onDocumentNameChange: (event: ChangeEvent<HTMLInputElement>) => void;
   saveDocument: () => void;
   changeActiveDocument: (id: string) => void;
+  unsavedChanges: boolean;
 }
 
 interface DocumentContextWrapperProps {
@@ -33,6 +34,7 @@ export const DocumentContext = createContext<DocumentContextProps>({
   onDocumentNameChange: () => {},
   saveDocument: () => {},
   changeActiveDocument: () => {},
+  unsavedChanges: false
 });
 
 const DocumentContextWrapper: React.FC<DocumentContextWrapperProps> = ({ children }) => {
@@ -48,6 +50,8 @@ const DocumentContextWrapper: React.FC<DocumentContextWrapperProps> = ({ childre
   useEffect(() => {
     localStorage.setItem('documents', JSON.stringify(documents));
     localStorage.setItem('activeDocument', JSON.stringify(activeDocument));
+
+    setUnsavedChanges(false);
   }, [documents, activeDocument]);
 
   const createDocument = (): void => {
@@ -76,6 +80,7 @@ const DocumentContextWrapper: React.FC<DocumentContextWrapperProps> = ({ childre
       ...activeDocument,
       content: event.target.value,
     });
+    setUnsavedChanges(true);
   };
 
   const onDocumentNameChange = (event: ChangeEvent<HTMLInputElement>): void => {
@@ -83,6 +88,7 @@ const DocumentContextWrapper: React.FC<DocumentContextWrapperProps> = ({ childre
       ...activeDocument,
       name: event.target.value,
     });
+    setUnsavedChanges(true);
   };
 
   const saveDocument = (): void => {
@@ -93,8 +99,7 @@ const DocumentContextWrapper: React.FC<DocumentContextWrapperProps> = ({ childre
           : document
       )
     );
-    console.log('save');
-    
+    setUnsavedChanges(false);
   };
   
 
@@ -124,6 +129,7 @@ const DocumentContextWrapper: React.FC<DocumentContextWrapperProps> = ({ childre
         onDocumentNameChange,
         saveDocument,
         changeActiveDocument,
+        unsavedChanges
       }}
     >
       {children}
