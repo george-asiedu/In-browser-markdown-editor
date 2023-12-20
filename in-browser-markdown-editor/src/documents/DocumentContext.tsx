@@ -43,6 +43,8 @@ const DocumentContextWrapper: React.FC<DocumentContextWrapperProps> = ({ childre
     return storedActiveDocument || textDocuments[0];
   });
 
+  const [unsavedChanges, setUnsavedChanges] = useState<boolean>(false);
+
   useEffect(() => {
     localStorage.setItem('documents', JSON.stringify(documents));
     localStorage.setItem('activeDocument', JSON.stringify(activeDocument));
@@ -85,15 +87,16 @@ const DocumentContextWrapper: React.FC<DocumentContextWrapperProps> = ({ childre
 
   const saveDocument = (): void => {
     setDocuments((existingDocuments) =>
-      existingDocuments.map((document) => {
-        if (document.id === activeDocument.id) {
-          document.name = activeDocument.name;
-          document.content = activeDocument.content;
-        }
-        return document;
-      })
+      existingDocuments.map((document) =>
+        document.id === activeDocument.id
+          ? { ...document, name: activeDocument.name, content: activeDocument.content }
+          : document
+      )
     );
+    console.log('save');
+    
   };
+  
 
   const deleteDocument = (): void => {
     const existingDocuments = documents.filter((document) => document.id !== activeDocument.id);
