@@ -1,10 +1,22 @@
 import React, { useEffect } from 'react'
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 interface NotificationProps {
     message: string;
     onHide: () => void;
 }
+
+const slideIn = keyframes`
+    from {
+        margin-left: 100%;
+        width: 300%;
+    }
+
+    to {
+        margin-left: 0%;
+        width: 100%;
+    }
+`
 
 const NotificationMessageStyles = styled.div`
     width: 250px;
@@ -15,8 +27,10 @@ const NotificationMessageStyles = styled.div`
     font-weight: bold;
     background-color: #00A693;
     color: white;
-    border-left: 2px solid green;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);`
+    border-left: 3px solid green;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    animation: ${slideIn} 0.5s ease-in-out;
+`
 
 const NotificationMessage: React.FC<NotificationProps> = ({ message, onHide }) => {
     useEffect(() => {
