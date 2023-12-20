@@ -1,6 +1,7 @@
 import React, { createContext, ChangeEvent, useState, useEffect } from 'react';
 import textDocuments from './data.json';
 import { v4 as uuidv4 } from 'uuid';
+import NotificationMessage from '../notification/NotificationMessage';
 
 export interface Document {
   id: string;
@@ -132,6 +133,7 @@ const DocumentContextWrapper: React.FC<DocumentContextWrapperProps> = ({ childre
         unsavedChanges
       }}
     >
+      <NotificationMessage message='Saved Successfully' />
       {children}
     </DocumentContext.Provider>
   );
