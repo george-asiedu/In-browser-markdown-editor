@@ -4,7 +4,7 @@ import { Theme } from '../../themes/Themes'
 import PreviewButton from './PreviewButton'
 import { ThemeContext } from '../../themes/ThemeContext'
 import { DocumentContext } from '../../documents/DocumentContext'
-import Markdown from 'markdown-to-jsx'
+import ReactMarkdown from 'react-markdown'
 
 interface PreviewWindowProps {
     showPreview: boolean
@@ -65,9 +65,9 @@ const PreviewWindow: React.FC<PreviewWindowProps> = ({ showPreview, handlePrevie
                 />
             </TitleContainer>
             <MarkdownContainer>
-                <Markdown>
+                <ReactMarkdown>
                     {activeDocument ? activeDocument.content : '#Welcome !!!'}
-                </Markdown>
+                </ReactMarkdown>
             </MarkdownContainer>
         </PreviewStyles>
     )

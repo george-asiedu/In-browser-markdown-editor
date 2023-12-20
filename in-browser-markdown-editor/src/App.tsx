@@ -4,7 +4,7 @@ import { ThemeContext } from './themes/ThemeContext';
 import { GlobalStyle } from './GlobalStyles.module';
 import Navigation from './components/navigation/Navigation';
 import CustomModal from './components/modal/Modal';
-// import Home from './components/home/Home';
+import Home from './components/home/Home';
 
 const StyledApp = styled.div``;
 
@@ -33,7 +33,7 @@ const App: React.FC = () => {
                 handleEnter={handleEnter}
                 setModalOpen={setModalOpen}
             />
-            {/* <Home inputRef={inputRef} showSidebar={showSidebar} /> */}
+            <Home inputRef={inputRef} showSidebar={showSidebar} />
         </StyledApp>
     </>
     // <DocumentContextWrapper>
