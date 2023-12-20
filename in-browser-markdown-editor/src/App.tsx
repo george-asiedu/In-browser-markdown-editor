@@ -36,13 +36,6 @@ const App: React.FC = () => {
             <Home inputRef={inputRef} showSidebar={showSidebar} />
         </StyledApp>
     </>
-    // <DocumentContextWrapper>
-    //   <ThemeContextProvider>
-    //     <ThemeProvider theme={theme}>
-          
-    //     </ThemeProvider>     
-    //   </ThemeContextProvider>
-    // </DocumentContextWrapper>
   )
 }
 
