@@ -74,7 +74,7 @@ const ThemeSelection: React.FC = () => {
 
     return (
         <ThemeSelector>
-            <DarkIcon src={iconDarkMode} />
+            <LightIcon src={iconLightMode} />
             <SwitchLabel>
                 <CheckboxStyles 
                     type='checkbox'
@@ -83,7 +83,7 @@ const ThemeSelection: React.FC = () => {
                 />
                 <SliderStyles />
             </SwitchLabel>
-            <LightIcon src={iconLightMode} />
+            <DarkIcon src={iconDarkMode} />
         </ThemeSelector>
     )
 }
