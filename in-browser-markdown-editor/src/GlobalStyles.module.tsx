@@ -20,6 +20,7 @@ import { Theme } from "./themes/Themes";
     font-family: 'Roboto Slab', serif;
     font-weight: 700;
     font-size: 32px;
+    margin-bottom: 5px;
     color: ${({ theme }) => theme.color.htmlheaders};
   }
 
@@ -27,6 +28,7 @@ import { Theme } from "./themes/Themes";
     font-family: 'Roboto Slab', serif;
     font-weight: 300;
     font-size: 28px;
+    margin-bottom: 5px;
     color: ${({ theme }) => theme.color.htmlheaders};
   }
 
@@ -34,6 +36,7 @@ import { Theme } from "./themes/Themes";
     font-family: 'Roboto Slab', serif;
     font-weight: 700;
     font-size: 24px;
+    margin-bottom: 5px;
     color: ${({ theme }) => theme.color.htmlheaders};
   }
 
@@ -41,6 +44,7 @@ import { Theme } from "./themes/Themes";
     font-family: 'Roboto Slab', serif;
     font-weight: 700;
     font-size: 20px;
+    margin-bottom: 5px;
     color: ${({ theme }) => theme.color.htmlheaders};
   }
 
@@ -48,6 +52,7 @@ import { Theme } from "./themes/Themes";
     font-family: 'Roboto Slab', serif;
     font-weight: 700;
     font-size: 16px;
+    margin-bottom: 5px;
     color: ${({ theme }) => theme.color.htmlheaders};
   }
 
@@ -55,6 +60,7 @@ import { Theme } from "./themes/Themes";
     font-family: 'Roboto Slab', serif;
     font-weight: 700;
     font-size: 14px;
+    margin-bottom: 5px;
     color: ${({ theme }) => theme.color.h6};
   }
 
@@ -62,6 +68,8 @@ import { Theme } from "./themes/Themes";
     font-family: 'Roboto Slab', serif;
     font-weight: 400;
     font-size: 14px;
+    margin-bottom: 5px;
+    line-height: 1.5;
     color: ${({ theme }) => theme.color.previewbody};
   }
 
@@ -69,6 +77,7 @@ import { Theme } from "./themes/Themes";
     font-family: 'Roboto Slab', serif;
     font-weight: 400;
     font-size: 14px;
+    line-height: 1.5;
     padding-left: 9px;
   }
 
@@ -76,6 +85,7 @@ import { Theme } from "./themes/Themes";
     font-family: 'Roboto Slab', serif;
     font-weight: 400;
     font-size: 14px;
+    line-height: 1.5;
     padding-left: 9px;
 
     &::marker {
