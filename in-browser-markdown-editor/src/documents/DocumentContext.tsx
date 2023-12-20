@@ -47,12 +47,21 @@ const DocumentContextWrapper: React.FC<DocumentContextWrapperProps> = ({ childre
   });
 
   const [unsavedChanges, setUnsavedChanges] = useState<boolean>(false);
+  const [showNotification, setShowNotification] = useState<boolean>(false);
+
 
   useEffect(() => {
     localStorage.setItem('documents', JSON.stringify(documents));
     localStorage.setItem('activeDocument', JSON.stringify(activeDocument));
 
     setUnsavedChanges(false);
+    // setShowNotification(true);
+
+    // const notificationTimeout = setTimeout(() => {
+    //   setShowNotification(false);
+    // }, 3000);
+
+    // return () => clearTimeout(notificationTimeout);
   }, [documents, activeDocument]);
 
   const createDocument = (): void => {
@@ -101,7 +110,12 @@ const DocumentContextWrapper: React.FC<DocumentContextWrapperProps> = ({ childre
       )
     );
     setUnsavedChanges(false);
+    setShowNotification(true);
   };
+
+  const hideNotification = () => {
+    setShowNotification(false)
+  }
   
 
   const deleteDocument = (): void => {
@@ -133,7 +147,7 @@ const DocumentContextWrapper: React.FC<DocumentContextWrapperProps> = ({ childre
         unsavedChanges
       }}
     >
-      <NotificationMessage message='Saved Successfully' />
+      {showNotification && <NotificationMessage message='Saved Successfully' onHide={hideNotification} />}
       {children}
     </DocumentContext.Provider>
   );

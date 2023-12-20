@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styled from 'styled-components';
 
 interface NotificationProps {
     message: string;
+    onHide: () => void;
 }
 
 const NotificationMessageStyles = styled.div`
@@ -17,7 +18,11 @@ const NotificationMessageStyles = styled.div`
     border-left: 2px solid green;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);`
 
-const NotificationMessage: React.FC<NotificationProps> = ({ message}) => {
+const NotificationMessage: React.FC<NotificationProps> = ({ message, onHide }) => {
+    useEffect(() => {
+        const timeOutId = setTimeout(onHide, 3000)
+        return () => clearTimeout(timeOutId)
+    }, [onHide])
   return (
     <NotificationMessageStyles>
         {message}
