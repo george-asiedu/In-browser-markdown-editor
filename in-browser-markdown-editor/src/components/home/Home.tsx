@@ -17,7 +17,7 @@ const HomeStyles = styled.div<{ showSidebar: boolean ; theme: Theme}>`
     height: 100%;
     width: 100%;
     position: fixed;
-  color: ${({theme}) => theme.color.markdownbody};
+    color: ${({theme}) => theme.color.markdownbody};
     background-color: ${({theme}) => theme.background.main};
     transform: translateX(${({ showSidebar }) => (showSidebar ? "250px" : "0px")});
     transition: 0.3s;

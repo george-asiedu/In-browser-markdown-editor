@@ -8,6 +8,7 @@ import { DocumentContext } from '../../documents/DocumentContext';
 interface CustomModalProps {
     modalOpen: boolean;
     setModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
+    activeDocumentName?: string;
 }
 
 const ModalStyles = styled(Modal)<{ theme: Theme }>`
@@ -72,7 +73,7 @@ const ButtonStyles = styled.button<{ theme: Theme }>`
 
 const CustomModal: React.FC<CustomModalProps> = ({ modalOpen, setModalOpen }) => {
     const { theme } = useContext(ThemeContext)
-    const { deleteDocument } = useContext(DocumentContext)
+    const { deleteDocument, activeDocument} = useContext(DocumentContext)
 
     return (
         <ThemeProvider theme={theme}>
@@ -87,7 +88,7 @@ const CustomModal: React.FC<CustomModalProps> = ({ modalOpen, setModalOpen }) =>
             >
                 <HeaderStyles theme={theme}>Delete this document?</HeaderStyles>
                 <TextStyles theme={theme}>
-                    Are you sure you want to delete the 'welcome.md' and its content?
+                    Are you sure you want to delete the `{activeDocument.name}` and its content?
                     This action cannot be reveresed.
                 </TextStyles>
                 <ButtonStyles 
