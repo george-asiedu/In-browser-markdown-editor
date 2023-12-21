@@ -27,7 +27,6 @@ const PreviewStyles = styled.div<{ showPreview: boolean; theme: Theme }>`
 const TitleContainer = styled.div<{ theme: Theme }>`
     height: 42px;
     font-family: "Roboto";
-    font-style: normal;
     font-weight: 500;
     font-size: 14px;
     line-height: 16px;
@@ -44,8 +43,7 @@ const ShowMarkdownButton = styled(PreviewButton)``
 
 const MarkdownContainer = styled.div`
     height: calc(100% - 120px);
-    padding-left: 16px;
-    padding-right: 24px;
+    padding: 0px 5%;
     overflow: auto;
 `
 

@@ -137,7 +137,7 @@ import { Theme } from "./themes/Themes";
     padding: 24px 24px 24px 20px;
     width: 90%;
     border-radius: 4px;
-    background-color: ${({ theme }) => theme.background.blockquote};;
+    background-color: ${({ theme }) => theme.background.blockquote};
   }
   
   pre code {

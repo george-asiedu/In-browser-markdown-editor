@@ -67,7 +67,6 @@ const ThemeSelection: React.FC = () => {
     const [checked, setChecked] = useState(false)
 
     const handleCheckedChange = (event: ChangeEvent<HTMLInputElement>) => {
-        console.log(event.target.checked)
         setChecked(event.target.checked)
         handleThemeChange()
     }

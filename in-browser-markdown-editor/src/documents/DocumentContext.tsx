@@ -55,13 +55,6 @@ const DocumentContextWrapper: React.FC<DocumentContextWrapperProps> = ({ childre
     localStorage.setItem('activeDocument', JSON.stringify(activeDocument));
 
     setUnsavedChanges(false);
-    // setShowNotification(true);
-
-    // const notificationTimeout = setTimeout(() => {
-    //   setShowNotification(false);
-    // }, 3000);
-
-    // return () => clearTimeout(notificationTimeout);
   }, [documents, activeDocument]);
 
   const createDocument = (): void => {

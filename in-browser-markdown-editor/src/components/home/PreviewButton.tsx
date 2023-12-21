@@ -42,7 +42,7 @@ const PreviewButton: React.FC<PreviewButtonProps> = ({ showPreview, handlePrevie
     return (
         <PreviewButtonStyles
             theme={theme}
-            onClick={() => handlePreview}
+            onClick={() => handlePreview()}
             className={className}
         >
             <PreviewIcon src={showPreview ? iconHidePreview : iconShowPreview} />
