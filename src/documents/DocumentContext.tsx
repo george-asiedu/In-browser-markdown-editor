@@ -42,7 +42,7 @@ const DocumentContextWrapper: React.FC<DocumentContextWrapperProps> = ({ childre
   
   const [documents, setDocuments] = useState<Document[]>(textDocuments);
   const [activeDocument, setActiveDocument] = useState<Document>(() => {
-    const storedActiveDocument = JSON.parse(localStorage.getItem('activeDocument') || '');
+    const storedActiveDocument = JSON.parse(localStorage.getItem('activeDocument') || '{}');
     return storedActiveDocument || textDocuments[0];
   });
 
