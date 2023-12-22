@@ -6,7 +6,7 @@ import { ThemeContext } from '../../themes/ThemeContext'
 import { Theme } from '../../themes/Themes'
 
 interface PreviewButtonProps {
-    showPreview: boolean
+    showpreview: boolean
     handlePreview: () => void
     isPreviewWindow: boolean 
     className?: string
@@ -36,7 +36,7 @@ const PreviewIcon = styled.img`
   }
 `
 
-const PreviewButton: React.FC<PreviewButtonProps> = ({ showPreview, handlePreview, className}) => {
+const PreviewButton: React.FC<PreviewButtonProps> = ({ showpreview, handlePreview, className}) => {
     const { theme } = useContext(ThemeContext)
 
     return (
@@ -45,7 +45,7 @@ const PreviewButton: React.FC<PreviewButtonProps> = ({ showPreview, handlePrevie
             onClick={() => handlePreview()}
             className={className}
         >
-            <PreviewIcon src={showPreview ? iconHidePreview : iconShowPreview} />
+            <PreviewIcon src={showpreview ? iconHidePreview : iconShowPreview} />
         </PreviewButtonStyles>
     )
 }

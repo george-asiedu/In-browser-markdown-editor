@@ -6,12 +6,12 @@ import { Theme } from "../../themes/Themes";
 import PreviewButton from "./PreviewButton";
 
 interface MarkdownEditorProps {
-  showPreview: boolean;
+  showpreview: boolean;
   handlePreview: () => void;
 }
 
-const StyledEditorContainer = styled.div<{ showPreview: boolean }>`
-    display: ${({ showPreview }) => (showPreview ? "none" : "flex")};
+const StyledEditorContainer = styled.div<{ showpreview: boolean }>`
+    display: ${({ showpreview }) => (showpreview ? "none" : "flex")};
     flex-flow: column nowrap;
     height: 100%;
     width: 50%;
@@ -19,7 +19,7 @@ const StyledEditorContainer = styled.div<{ showPreview: boolean }>`
     border: none;
 
     @media screen and (max-width: 768px) {
-        width: ${({ showPreview }) => (showPreview ? "0%" : "1000%")};
+        width: ${({ showpreview }) => (showpreview ? "0%" : "1000%")};
     }
 `;
 
@@ -70,11 +70,11 @@ const MarkdownEditorWindow = forwardRef(
       };
   
       return (
-        <StyledEditorContainer showPreview={props.showPreview}>
+        <StyledEditorContainer showpreview={props.showpreview}>
           <TitleContainer theme={theme}>
             MARKDOWN
             <ShowPreviewButton
-              showPreview={props.showPreview}
+              showpreview={props.showpreview}
               handlePreview={props.handlePreview}
               isPreviewWindow={false}
             />

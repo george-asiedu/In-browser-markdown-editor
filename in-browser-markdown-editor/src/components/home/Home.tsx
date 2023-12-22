@@ -8,10 +8,10 @@ import PreviewWindow from "./PreviewWindow"
 
 interface HomeProps {
   inputRef: React.RefObject<HTMLTextAreaElement>
-  showSidebar: boolean
+  showsidebar: boolean
 }
 
-const HomeStyles = styled.div<{ showSidebar: boolean ; theme: Theme}>`
+const HomeStyles = styled.div<{ showsidebar: boolean ; theme: Theme}>`
     display: flex;
     flex-flow: row nowrap;
     height: 100%;
@@ -19,7 +19,7 @@ const HomeStyles = styled.div<{ showSidebar: boolean ; theme: Theme}>`
     position: fixed;
     color: ${({theme}) => theme.color.markdownbody};
     background-color: ${({theme}) => theme.background.main};
-    transform: translateX(${({ showSidebar }) => (showSidebar ? "250px" : "0px")});
+    transform: translateX(${({ showsidebar }) => (showsidebar ? "250px" : "0px")});
     transition: 0.3s;
 `
 
@@ -44,26 +44,26 @@ const CreateDocumentMessage = styled.div<{ theme: Theme}>`
     color: ${({theme}) => theme.color.markdownbody};
 `
 
-const Home: React.FC<HomeProps> = ({ inputRef, showSidebar }) => {
+const Home: React.FC<HomeProps> = ({ inputRef, showsidebar }) => {
   const { theme } = useContext(ThemeContext)
   const { activeDocument } = useContext(DocumentContext)
-  const [ showPreview, setShowPreview ] = useState(false)
+  const [ showpreview, setShowpreview ] = useState(false)
 
   const handlePreview = () => {
-    setShowPreview((prev) => !prev)
+    setShowpreview((prev) => !prev)
   }
 
   return (
-    <HomeStyles showSidebar={showSidebar} theme={theme}>
+    <HomeStyles showsidebar={showsidebar} theme={theme}>
       {activeDocument ? (
         <>
           <MarkdownEditorWindow
             ref={inputRef}
-            showPreview={showPreview}
+            showpreview={showpreview}
             handlePreview={handlePreview}
           />
           <Divider theme={theme} />
-          <PreviewWindow showPreview={showPreview} handlePreview={handlePreview} />
+          <PreviewWindow showpreview={showpreview} handlePreview={handlePreview} />
         </>
       ) : (
         <CreateDocumentMessage theme={theme}>

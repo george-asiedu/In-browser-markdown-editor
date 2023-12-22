@@ -33,7 +33,7 @@ const App: React.FC = () => {
                 handleEnter={handleEnter}
                 setModalOpen={setModalOpen}
             />
-            <Home inputRef={inputRef} showSidebar={showSidebar} />
+            <Home inputRef={inputRef} showsidebar={showSidebar} />
         </StyledApp>
     </>
   )

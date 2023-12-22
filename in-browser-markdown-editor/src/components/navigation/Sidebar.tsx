@@ -7,11 +7,11 @@ import CreateButton from './CreateButton';
 import ThemeSelection from './ThemeSelection';
 
 interface SidebarProps {
-    showSidebar: boolean;
+    showsidebar: boolean;
     handleSidebar: () => void;
 }
 
-const SidebarStyles = styled.div<{ showSidebar: boolean }>`
+const SidebarStyles = styled.div<{ showsidebar: boolean }>`
     height: 100vh;
     width: 250px;
     position: fixed;
@@ -23,7 +23,7 @@ const SidebarStyles = styled.div<{ showSidebar: boolean }>`
     justify-content: space-between;
 
     transform: translateX(
-    ${({ showSidebar }) => (showSidebar ? "0px" : "-250px")}
+    ${({ showsidebar }) => (showsidebar ? "0px" : "-250px")}
     );
     transition: 0.3s;
 `
@@ -94,13 +94,13 @@ const ThemeContainer = styled.div`
     padding-bottom: 24px;
 `
 
-const Sidebar: React.FC<SidebarProps> = ({ showSidebar, handleSidebar }: SidebarProps) => {
+const Sidebar: React.FC<SidebarProps> = ({ showsidebar, handleSidebar }: SidebarProps) => {
     const { documents, changeActiveDocument } = useContext(DocumentContext)
 
     useEffect(() => {}, [documents])
 
     return (
-        <SidebarStyles showSidebar={showSidebar}>
+        <SidebarStyles showsidebar={showsidebar}>
             <DocumentsContainer>
                 <DocumentsTitle>MY DOCUMENTS</DocumentsTitle>
                 <CreateButton />

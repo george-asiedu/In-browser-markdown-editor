@@ -9,21 +9,21 @@ import SaveButton from './SaveButton'
 import { DocumentContext } from '../../documents/DocumentContext'
 
 interface NavbarProps {
-    showSidebar: boolean;
+    showsidebar: boolean;
     handleSidebar: () => void;
     handleEnter: () => void;
     setModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-interface NavbarStylesProps {
-    showSidebar: boolean;
-}
+// interface NavbarStylesProps {
+//     showsidebar: boolean;
+// }
 
 interface HamburgerButtonProps {
     onClick: () => void;
 }
 
-const NavbarStyles = styled.div<NavbarStylesProps>`
+const NavbarStyles = styled.div<{ showsidebar: boolean}>`
     width: 100vw;
     height: 72px;
     color: #ffffff;
@@ -33,7 +33,7 @@ const NavbarStyles = styled.div<NavbarStylesProps>`
     justify-content: space-between;
     shadow: 0px 3px 0px rgba(0, 0, 0, 0.4);
     transform: translateX(
-        ${({ showSidebar }) => (showSidebar ? "250px" : "0px")}
+        ${({ showsidebar }) => (showsidebar ? "250px" : "0px")}
     );
     transition: 0.3s;
 
@@ -170,7 +170,7 @@ const RightContainer = styled.div`
     align-items: center;
 `
 
-const Navbar: React.FC<NavbarProps> = ({ showSidebar, handleSidebar, handleEnter, setModalOpen }) => {
+const Navbar: React.FC<NavbarProps> = ({ showsidebar, handleSidebar, handleEnter, setModalOpen }) => {
     const { activeDocument, onDocumentNameChange } = useContext(DocumentContext)
 
     const handleKeyUp = (event: KeyboardEvent<HTMLInputElement>) => {
@@ -186,10 +186,10 @@ const Navbar: React.FC<NavbarProps> = ({ showSidebar, handleSidebar, handleEnter
     };
 
     return (
-        <NavbarStyles showSidebar={showSidebar}>
+        <NavbarStyles showsidebar={showsidebar}>
             <LeftContainer>
                 <HamburgerButton onClick={handleSidebar}>
-                    <MenuIcon src={showSidebar ? iconClose : iconMenu} />
+                    <MenuIcon src={showsidebar ? iconClose : iconMenu} />
                 </HamburgerButton>
                 <Title>MARKDOWN</Title>
                 <Divider />

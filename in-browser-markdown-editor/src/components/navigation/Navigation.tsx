@@ -22,13 +22,13 @@ const Navigation: React.FC<NavigationProps> = ({
     return (
         <NavigationStyles>
             <Navbar
-                showSidebar={showSidebar}
+                showsidebar={showSidebar}
                 handleSidebar={handleSidebar}
                 handleEnter={handleEnter}
                 setModalOpen={setModalOpen}
             />
             <Sidebar  
-                showSidebar={showSidebar}
+                showsidebar={showSidebar}
                 handleSidebar={handleSidebar}
             />
         </NavigationStyles>

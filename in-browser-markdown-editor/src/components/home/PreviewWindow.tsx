@@ -7,20 +7,20 @@ import { DocumentContext } from '../../documents/DocumentContext'
 import ReactMarkdown from 'react-markdown'
 
 interface PreviewWindowProps {
-    showPreview: boolean
+    showpreview: boolean
     handlePreview: () => void
 }
 
-const PreviewStyles = styled.div<{ showPreview: boolean; theme: Theme }>`
+const PreviewStyles = styled.div<{ showpreview: boolean; theme: Theme }>`
     display: flex;
     flex-flow: column nowrap;
     height: 100%;
-    width: ${({ showPreview }) => (showPreview ? "100%" : "50%")};
+    width: ${({ showpreview }) => (showpreview ? "100%" : "50%")};
     color: ${(props) => props.theme.color.markdownbody};
     background-color: ${(props) => props.theme.background.main};
 
     @media screen and (max-width: 768px) {
-        width: ${({ showPreview }) => (showPreview ? "100%" : "0%")};
+        width: ${({ showpreview }) => (showpreview ? "100%" : "0%")};
     }
 `
 
@@ -47,17 +47,17 @@ const MarkdownContainer = styled.div`
     overflow: auto;
 `
 
-const PreviewWindow: React.FC<PreviewWindowProps> = ({ showPreview, handlePreview }) => {
+const PreviewWindow: React.FC<PreviewWindowProps> = ({ showpreview, handlePreview }) => {
     const { theme } = useContext(ThemeContext)
     const { activeDocument } = useContext(DocumentContext)
 
 
     return (
-        <PreviewStyles theme={theme} showPreview={showPreview}>
+        <PreviewStyles theme={theme} showpreview={showpreview}>
             <TitleContainer theme={theme}>
                 PREVIEW
                 <ShowMarkdownButton
-                    showPreview={showPreview}
+                    showpreview={showpreview}
                     handlePreview={handlePreview}
                     isPreviewWindow={true}
                 />
