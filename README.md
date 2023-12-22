@@ -44,7 +44,8 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL - [In-browser markdown editor](./)
+- Solution URL - [In-browser markdown editor](https://github.com/george-asiedu/In-browser-markdown-editor)
+- Live Site URL - [In-browser markdown editor](https://in-browser-markdown-editor-xi.vercel.app/)
 
 ## My Process
 
