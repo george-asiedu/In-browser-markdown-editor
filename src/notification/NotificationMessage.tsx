@@ -25,9 +25,9 @@ const NotificationMessageStyles = styled.div`
     padding: 10px;
     text-align: center;
     font-weight: bold;
-    background-color: #00A693;
+    background-color: #e46643;
     color: white;
-    border-left: 3px solid green;
+    border-left: 3px solid #e46643;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     animation: ${slideIn} 0.5s ease-in-out;
 `

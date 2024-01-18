@@ -22,6 +22,11 @@ const PreviewStyles = styled.div<{ showpreview: boolean; theme: Theme }>`
     @media screen and (max-width: 768px) {
         width: ${({ showpreview }) => (showpreview ? "100%" : "0%")};
     }
+
+    @media screen and (min-width: 1024px) {
+        max-width: ${({ showpreview }) => (showpreview ? "720px" : "100%")};
+        margin: 0 auto;
+    }
 `
 
 const TitleContainer = styled.div<{ theme: Theme }>`
@@ -43,7 +48,7 @@ const ShowMarkdownButton = styled(PreviewButton)``
 
 const MarkdownContainer = styled.div`
     height: calc(100% - 120px);
-    padding: 0px 5%;
+    padding: 10px 5%;
     overflow: auto;
 `
 

@@ -15,10 +15,6 @@ interface NavbarProps {
     setModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-// interface NavbarStylesProps {
-//     showsidebar: boolean;
-// }
-
 interface HamburgerButtonProps {
     onClick: () => void;
 }

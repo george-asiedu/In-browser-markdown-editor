@@ -19,7 +19,7 @@ const StyledEditorContainer = styled.div<{ showpreview: boolean }>`
     border: none;
 
     @media screen and (max-width: 768px) {
-        width: ${({ showpreview }) => (showpreview ? "0%" : "1000%")};
+        width: ${({ showpreview }) => (showpreview ? "0%" : "100%")};
     }
 `;
 

@@ -49,7 +49,7 @@ const DocumentsList = styled.div`
     display: flex;
     flex-flow: column nowrap;
     align-items: flex-start;
-    overflow-y: scroll;
+    overflow-y: auto;
 `
 
 const DocumentLink = styled.div`
@@ -94,7 +94,7 @@ const ThemeContainer = styled.div`
     padding-bottom: 24px;
 `
 
-const Sidebar: React.FC<SidebarProps> = ({ showsidebar, handleSidebar }: SidebarProps) => {
+const Sidebar: React.FC<SidebarProps> = ({ showsidebar, handleSidebar }) => {
     const { documents, changeActiveDocument } = useContext(DocumentContext)
 
     useEffect(() => {}, [documents])
